@@ -1,5 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    css: [
+        '~/assets/css/general.css'
+    ],
+
     serverHandlers: [
         {
             route: '/server',
