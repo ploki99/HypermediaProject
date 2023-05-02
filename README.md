@@ -8,7 +8,9 @@ Project for the course of Hypermedia Applications for Mathematical Engineering, 
 ## Setup the folder
 The first things to do are:
 - Move inside the folder with the terminal (or opening the project with VSCode) and then use:
+    
     `npm install`
 - To run the project you have to use:
+    
     `npm run dev`
 
