@@ -4,7 +4,9 @@
 <template>
     <div class = 'page'>
         <TheHeader />
+        <br/>
         <slot />
+        <br/>
         <TheFooter />
     </div>
 </template>

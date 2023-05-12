@@ -1,8 +1,7 @@
 <template>
-    {{test}}
-    <br/>
-    <br/>
-    <NuxtLink to="/">go to Home Page</NuxtLink>
+    <main>
+        {{test}}
+    </main>
 </template>
 
 <script setup>
