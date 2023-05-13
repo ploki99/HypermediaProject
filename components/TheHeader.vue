@@ -9,10 +9,10 @@
         <!-- Links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-            <NuxtLink to="/" class="nav-link" >Home</NuxtLink>
+                <NuxtLink to="/" class="nav-link" >Home</NuxtLink>
             </li>
             <li class="nav-item">
-            <NuxtLink to="test" class="nav-link">Test</NuxtLink>
+                <NuxtLink to="/team" class="nav-link">Team</NuxtLink>
             </li>
         </ul>
         </div>

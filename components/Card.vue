@@ -1,0 +1,35 @@
+<template>
+
+    <div class="card">
+        <img class="card-img-top" :src="images[dynamic_image_name]" :alt="title + ' image'">
+        <div class="card-body">
+            <h4 class="card-title">{{ title }}</h4>
+            <p class="card-text">{{ subtitle }}</p>
+            <div class="text-center">
+                <NuxtLink :to = "link" class="btn btn-primary">More details</NuxtLink>
+            </div>
+        </div>
+    </div>
+
+</template>
+
+<script setup>
+    //define props
+    const props = defineProps(['pic_name', 'title', 'subtitle', 'link']);
+    //get all images
+    const images = getAllImages();
+    //set right image
+    const dynamic_image_name = props.pic_name;
+
+</script>
+
+<style>
+    .card{
+        width: 300px;
+        margin-left: 40px;
+        margin-bottom: 20px;
+    }
+    .card img{
+        margin-top: 10px;
+    }
+</style>
