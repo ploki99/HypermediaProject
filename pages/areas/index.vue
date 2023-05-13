@@ -1,8 +1,5 @@
-<!--
-    Home page
--->
 <template>
     <main class="container-fluid">
-        home page
+        areas page
     </main>
 </template>

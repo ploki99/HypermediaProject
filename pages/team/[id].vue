@@ -1,10 +1,11 @@
 <template>
     <main class="container">
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-4" id="img_div">
                 <img :src="images[dynamic_image_name]" class="rounded" :alt="person.name + ' image'" > 
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-7">
                 <h4>{{ person.name }}</h4>
                 <div class="text-secondary fw-bold">{{ person.role }}</div>
                 <br/>
@@ -32,7 +33,7 @@
 </script>
 
 <style>
-    img{
+    #img_div,img{
         width: 300px;
     }
 </style>

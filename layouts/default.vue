@@ -3,10 +3,12 @@
 -->
 <template>
     <div class = 'page'>
-        <TheHeader />
-        <br/>
-        <slot />
-        <br/>
+        <div class = 'content'>
+            <TheHeader />
+            <br/>
+            <slot />
+            <br/>
+        </div>
         <TheFooter />
     </div>
 </template>
