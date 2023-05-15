@@ -5,9 +5,7 @@
     <div class = 'page'>
         <div class = 'content'>
             <TheHeader />
-            <br/>
             <slot />
-            <br/>
         </div>
         <TheFooter />
     </div>

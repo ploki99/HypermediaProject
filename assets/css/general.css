@@ -12,3 +12,9 @@ html, body, #__nuxt, .page {
 footer {
     flex-shrink: 0;
 }
+
+/*formatting main*/
+main{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

@@ -1,7 +1,7 @@
 <template>
 
     <div class="card">
-        <img class="card-img-top" :src="images[dynamic_image_name]" :alt="title + ' image'">
+        <img class="card-img-top" :src="images[pic_name]" :alt="title + ' image'">
         <div class="card-body">
             <h4 class="card-title">{{ title }}</h4>
             <p class="card-text">{{ subtitle }}</p>
@@ -18,8 +18,6 @@
     const props = defineProps(['pic_name', 'title', 'subtitle', 'link']);
     //get all images
     const images = getAllImages();
-    //set right image
-    const dynamic_image_name = props.pic_name;
 
 </script>
 
