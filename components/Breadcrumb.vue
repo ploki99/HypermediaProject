@@ -1,12 +1,13 @@
 <template>
     <div class="container-fluid">
-        <!-- Clickable part of the breadcrumb -->
-        <span v-for="i of indexes">
-            <NuxtLink :to="pathLinks[i]" class="link-primary">{{pathNames[i]}}</NuxtLink>
-            &nbsp>&nbsp 
-        </span>    
-        <!-- Current page (not clickable) -->
-        <span class="text-secondary">{{ pathNames[pathNames.length-1] }}</span>       
+        <ul class="breadcrumb">
+            <!-- Clickable part of the breadcrumb -->
+            <li v-for="i of indexes" class="breadcrumb-item">
+                <NuxtLink :to="pathLinks[i]">{{pathNames[i]}}</NuxtLink>
+            </li>    
+            <!-- Current page (not clickable) -->
+            <li class="breadcrumb-item active">{{ pathNames[pathNames.length-1] }}</li>       
+        </ul>
     </div>
 </template>
 
@@ -17,7 +18,5 @@
 </script>
 
 <style>
-    .link-primary{
-        text-decoration: none;
-    }
+
 </style>

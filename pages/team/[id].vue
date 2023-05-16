@@ -14,13 +14,7 @@
         </div>
         <div class="row" id="supervisedProjects">
             <h3>Supervised projects</h3>
-            <ul class="list-group">
-                <li v-for = "p of person.projects" class="list-group-item">{{ p.name }}</li>
-            </ul> 
-            <div v-if="person.projects.length == 0" class="text-secondary fst-italic">
-                {{ person.name}} is not currently supervising any projects.
-            </div>
-
+            <Project v-for="p of person.projects" :name="p.name" :link="'/projects/'+p.id" :picture="p.picture" />
         </div>
     </main>
 </template>

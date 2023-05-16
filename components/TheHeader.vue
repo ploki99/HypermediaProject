@@ -18,8 +18,8 @@
                 <a class="nav-link dropdown-toggle" href="#" @mouseover="openProjects" @click="openProjects">Projects</a>
                 <ul class="dropdown-menu" id="myDropdown" @mouseleave="closeProjects">
                     <li><NuxtLink class="dropdown-item" to="/projects">All projects</NuxtLink></li>
-                    <li><a class="dropdown-item" href="#">Most relevant projects</a></li>
-                    <li><a class="dropdown-item" href="#">Projects by area</a></li>
+                    <li><NuxtLink class="dropdown-item" to="/projects/most_relevant">Most relevant projects</NuxtLink></li>
+                    <li><NuxtLink class="dropdown-item" to="/projects/by_area">Projects by area</NuxtLink></li>
                 </ul>
             </li> 
             <li class="nav-item" @mouseover="closeProjects">

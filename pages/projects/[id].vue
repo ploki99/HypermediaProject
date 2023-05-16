@@ -1,7 +1,17 @@
 <template>
     <Breadcrumb :pathNames="pathNames" :pathLinks="pathLinks" />
     <main class="container">
-        {{ project }}
+        <div>Supervisor: <NuxtLink :to="'/team/' + project.people.id" >{{ project.people.name }}</NuxtLink></div>
+        
+        <div>Related areas: 
+            <span v-for="a of project.areas">
+                <NuxtLink  :to="'/areas/' + a.id">{{ a.name }} </NuxtLink>
+                &nbsp;
+            </span>    
+        </div>
+
+        <div>Name: {{ project.name }}</div>
+
     </main>
 </template>
 
