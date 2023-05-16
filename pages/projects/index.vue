@@ -1,5 +1,15 @@
 <template>
+    <Breadcrumb :pathNames="pathNames" :pathLinks="pathLinks" />
     <main class="container-fluid">
-        project page
+        {{ projects }}
     </main>
 </template>
+
+<script setup>
+    //get request from dataset
+    const { data: projects } = await useFetch('/api/projects');
+
+    //set path for breadcrub
+    const pathNames = ["Home","All projects"];
+    const pathLinks = ["/"];
+</script>

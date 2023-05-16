@@ -1,4 +1,5 @@
 <template>
+    <Breadcrumb :pathNames="pathNames" :pathLinks="pathLinks" />
     <main class="container">
         <div class="row">
             <div class="col-sm-4" id="img_div">
@@ -33,6 +34,10 @@
 
     //get images
     const images = getAllImages();
+
+    //set path for breadcrub
+    const pathNames = ["Home","Team",person.value.name];
+    const pathLinks = ["/","/team"];
     
 </script>
 

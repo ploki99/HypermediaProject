@@ -3,7 +3,7 @@
 import { filename } from 'pathe/utils';
 
 export function getAllImages() {
-    const glob = import.meta.glob('~/assets/img/*.(png|jpeg)', { eager: true });
+    const glob = import.meta.glob('~/assets/img/*.(png|jpeg|jpg)', { eager: true });
     return Object.fromEntries(
         Object.entries(glob).map(([key, value]) => [filename(key), value.default])
     );
