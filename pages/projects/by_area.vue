@@ -11,17 +11,21 @@
 </template>
 
 <script setup>
-
-    const defaultIdArea = 0; //TODO: use pinia
+    //import pinia store
+    const stateStore = useStateStore();
 
     //get areas from dataset
     const { data: areas } = await useFetch('/api/areas');
     //get projects from dataset
     const { data: projects } = await useFetch('/api/projects');
     
+    //set default area    
+    const defaultArea = stateStore.lastArea == '' ? areas.value[0].name : stateStore.lastArea;
     //get the projects in the selected area
-    const selectedArea = ref(areas.value[defaultIdArea].name);
+    const selectedArea = ref(defaultArea);
     const filteredProjects = computed(() => {
+        //change selected area in Pinia store
+        stateStore.setLastArea(selectedArea.value);
         const arr = [];
         // filtering the list of projects
         for(let p of projects.value) {

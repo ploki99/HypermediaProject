@@ -6,8 +6,22 @@ export default defineNuxtConfig({
         '~/node_modules/bootstrap/dist/css/bootstrap.min.css'
     ],
 
-    modules:['@nuxtjs/supabase'],
+    modules:[
+        '@nuxtjs/supabase',
+        '@pinia/nuxt'
+    ],
     
+    pinia: {
+        autoImports: [
+          // automatically imports `defineStore`
+          'defineStore', // import { defineStore } from 'pinia'
+        ],
+    },
+    //auto imports the directory where we put the Pinia stores
+    imports: {
+        dirs: ['stores'],
+    },
+
     ssr: true,
 
     app:{
