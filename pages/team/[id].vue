@@ -20,6 +20,9 @@
 </template>
 
 <script setup>
+    //import pinia store
+    const stateStore = useStateStore();
+
     //get id
     const route = useRoute();
     const id = route.params.id;
@@ -32,6 +35,9 @@
     //set path for breadcrub
     const pathNames = ["Home","Team",person.value.name];
     const pathLinks = ["/","/team"];
+
+    //set last project pages visited
+    stateStore.setDefaultLastProject();
     
 </script>
 

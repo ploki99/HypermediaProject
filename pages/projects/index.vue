@@ -9,6 +9,9 @@
 </template>
 
 <script setup>
+    //import pinia store
+    const stateStore = useStateStore();
+
     //get request from dataset
     const { data: projects } = await useFetch('/api/projects');
     
@@ -31,4 +34,6 @@
     //set path for breadcrub
     const pathNames = ["Home","All projects"];
     const pathLinks = ["/"];
+    //set last project pages visited
+    stateStore.setDefaultLastProject();
 </script>

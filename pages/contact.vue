@@ -63,7 +63,11 @@
 </style>
 
 <script setup>
+    //import pinia store
+    const stateStore = useStateStore();
     //set path for breadcrub
     const pathNames = ["Home","Contact us"];
     const pathLinks = ["/"];
+    //set last project pages visited
+    stateStore.setDefaultLastProject();
 </script>

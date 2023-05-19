@@ -16,6 +16,9 @@
 </template>
 
 <script setup>
+    //import pinia store
+    const stateStore = useStateStore();
+
     //get id
     const route = useRoute();
     const id = route.params.id;
@@ -26,7 +29,7 @@
    // const images = getAllImages();
 
     //set path for breadcrub
-    const pathNames = ["Home","All projects",project.value.name];
-    const pathLinks = ["/","/projects"];
+    const pathNames = ["Home",stateStore.lastProjectPage,project.value.name];
+    const pathLinks = ["/",stateStore.lastProjectLink];
     
 </script>

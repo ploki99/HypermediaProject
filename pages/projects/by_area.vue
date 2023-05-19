@@ -41,4 +41,7 @@
     //set path for breadcrub
     const pathNames = ["Home","Projects by area"];
     const pathLinks = ["/"];
+    //set last project pages visited
+    stateStore.setLastProjectPage("Projects by area");
+    stateStore.setLastProjectLink("/projects/by_area");
 </script>

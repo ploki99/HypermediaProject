@@ -7,10 +7,15 @@
 </template>
 
 <script setup>
+    //import pinia store
+    const stateStore = useStateStore();
+
     //get request from dataset
     const { data: areas } = await useFetch('/api/areas');
 
     //set path for breadcrub
     const pathNames = ["Home","Areas"];
     const pathLinks = ["/"];
+    //set last project pages visited
+    stateStore.setDefaultLastProject();
 </script>

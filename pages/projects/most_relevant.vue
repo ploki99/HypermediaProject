@@ -21,10 +21,16 @@
 </template>
 
 <script setup>
+    //import pinia store
+    const stateStore = useStateStore();
+
     //get request from dataset
     const { data: projects } = await useFetch('/api/projects/most_relevant');
 
     //set path for breadcrub
     const pathNames = ["Home","Most relevant projects"];
     const pathLinks = ["/"];
+    //set last project pages visited
+    stateStore.setLastProjectPage("Most relevant projects");
+    stateStore.setLastProjectLink("/projects/most_relevant");
 </script>

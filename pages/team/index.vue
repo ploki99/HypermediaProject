@@ -12,11 +12,16 @@
 </template>
 
 <script setup>
+    //import pinia store
+    const stateStore = useStateStore();
+
     //get request from dataset
     const { data: people } = await useFetch('/api/team');
     //set path for breadcrub
     const pathNames = ["Home","Team"];
     const pathLinks = ["/"];
+    //set last project pages visited
+    stateStore.setDefaultLastProject();
 </script>
 
 <style>

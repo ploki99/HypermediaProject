@@ -2,9 +2,11 @@
     Default layout used by all the page
 -->
 <template>
+    <!-- loading bar -->
+    <NuxtLoadingIndicator />
     <div class = 'page'>
         <div class = 'content'>
-            <TheHeader />
+            <TheHeader /> 
             <slot />
         </div>
         <TheFooter />
