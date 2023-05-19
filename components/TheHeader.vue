@@ -25,6 +25,12 @@
             <li class="nav-item" @mouseover="closeProjects">
                 <NuxtLink to="/areas" class="nav-link">Areas</NuxtLink>
             </li>
+            <li class="nav-item" @mouseover="closeProjects">
+                <NuxtLink to="/about_us" class="nav-link">About us</NuxtLink>
+            </li>
+            <li class="nav-item" @mouseover="closeProjects">
+                <NuxtLink to="/contact" class="nav-link">Contact us</NuxtLink>
+            </li>
         </ul>
         </div>
 
