@@ -1,12 +1,12 @@
 <!--
-    Footer of the page
+  Footer of the page
 -->
 
 <template>
 
 
   <!-- Footer -->
-  <footer class="text-center text-lg-start text-white" >
+  <footer class="text-center text-lg-start" >
     <!-- Grid container -->
     <div class="container p-4 pb-0">
       <!-- Section: Links -->
@@ -16,55 +16,34 @@
           <!-- Grid column -->
           <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
             <h6 class="text-uppercase mb-4 font-weight-bold">
-              Company name
+              Bright Futures
             </h6>
             <p>
-              Here you can use rows and columns to organize your footer
-              content. Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.
+              We are experienced investors and entrepreneurs helping early stage startups succeed 
+              through funding, mentorship, and industry expertise.
             </p>
           </div>
           <!-- Grid column -->
-
           <hr class="w-100 clearfix d-md-none" />
-
           <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
-            <p>
-              <a class="text-white">MDBootstrap</a>
-            </p>
-            <p>
-              <a class="text-white">MDWordPress</a>
-            </p>
-            <p>
-              <a class="text-white">BrandFlow</a>
-            </p>
-            <p>
-              <a class="text-white">Bootstrap Angular</a>
+          <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Areas of interest</h6>
+            <p v-for="a of areas">
+              <NuxtLink :to="'/areas/'+a.id" class="footerLink">{{ a.name }}</NuxtLink>
             </p>
           </div>
-          <!-- Grid column -->
-
-          <hr class="w-100 clearfix d-md-none" />
 
           <!-- Grid column -->
           <hr class="w-100 clearfix d-md-none" />
 
           <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-            <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-            <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
-            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Contact us</h6>
+            <p> +44 113 761 1243</p>
+            <p> info@bright-futures.com</p>
+            <p>London, 24 Oxford St, UK</p>
           </div>
           <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>           
-          </div>
         </div>
         <!--Grid row-->
       </section>
@@ -75,7 +54,7 @@
     <!-- Copyright -->
     <div class="text-center p-3" id="copyright_footer" >
       © 2023 Copyright:
-      <a class="text-white" href="#">Venture capital</a>
+      <b>Bright Futures</b>
     </div>
     <!-- Copyright -->
   </footer>
@@ -86,9 +65,22 @@
 
 <style>
     #copyright_footer{
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: var(--dark-primary-color);
+        color: var(--text-icons);
     }
     footer{
-        background-color: #929fba;
+        color: var(--primary-text);
+        background-color: var(--light-primary-color);
+    }
+    .footerLink{
+      color: var(--dark-primary-color);
+    }
+    .footerLink:hover{
+      color: var(--primary-text);
     }
 </style>
+
+<script setup>
+  //get areas from dataset
+  const { data: areas } = await useFetch('/api/areas');      
+</script>

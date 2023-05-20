@@ -2,8 +2,7 @@
 export default defineNuxtConfig({
     
     css: [
-        '~/assets/css/general.css',
-        '~/node_modules/bootstrap/dist/css/bootstrap.min.css'
+        '~/assets/css/general.css'
     ],
 
     modules:[
@@ -26,7 +25,15 @@ export default defineNuxtConfig({
 
     app:{
         head:{
-            title : "Venture capital",
+            title : "Bright Futures",
+            //bootstrap 5 css
+            link:[
+                {href:"https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css", rel:"stylesheet"}
+            ],
+            //bootstrap 5 js
+            script: [
+                { src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js'}
+            ],
             charset: "utf-8",
             meta: [
                 {

@@ -10,17 +10,17 @@
             <div class="col center-block text-center">
                 <img src="~assets/img/phone.png" alt="phone" class="contact_img">
                 <h5>Telephone</h5>
-                <div>+39 333-3333333</div>
+                <div>+44 113 761 1243</div>
             </div>
             <div class="col center-block text-center">
                 <img src="~assets/img/mail.png" alt="mail" class="contact_img">
                 <h5>E-mail</h5>
-                <div>mail@mail.com</div>
+                <div>info@bright-futures.com</div>
             </div>
             <div class="col center-block text-center">
                 <img src="~assets/img/home.png" alt="home" class="contact_img">
                 <h5>Address</h5>
-                <div>Via Italia 1, Roma, Italia</div>
+                <div>London, 24 Oxford St, UK</div>
             </div>
         </div>
         <!-- <form action="/action_page.php" class="contact_form">

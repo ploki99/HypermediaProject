@@ -3,7 +3,7 @@
         <ul class="breadcrumb">
             <!-- Clickable part of the breadcrumb -->
             <li v-for="i of indexes" class="breadcrumb-item">
-                <NuxtLink :to="pathLinks[i]">{{pathNames[i]}}</NuxtLink>
+                <NuxtLink :to="pathLinks[i]" class="breadcrumbLink" >{{pathNames[i]}}</NuxtLink>
             </li>    
             <!-- Current page (not clickable) -->
             <li class="breadcrumb-item active">{{ pathNames[pathNames.length-1] }}</li>       
@@ -18,5 +18,10 @@
 </script>
 
 <style>
-
+    .breadcrumbLink{
+        color: var(--dark-primary-color);
+    }
+    .breadcrumbLink:hover{
+        color: var(--primary-color);
+    }
 </style>

@@ -4,9 +4,6 @@
 <template>
     <main class="container-fluid">
         home page
-
-        <NuxtLink to="p">Test</NuxtLink>
-
     </main>
 </template>
 

@@ -30,4 +30,12 @@
     .card img{
         margin-top: 10px;
     }
+    .btn-primary{
+        background-color: var(--accent-color);
+        border-color: var(--accent-color);
+    }
+    .btn-primary:hover{
+        background-color: var(--accent-color2);
+        border-color: var(--accent-color2);
+    }
 </style>

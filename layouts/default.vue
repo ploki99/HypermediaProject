@@ -12,3 +12,9 @@
         <TheFooter />
     </div>
 </template>
+
+<style>
+    .content{
+        padding-top: 90px;
+    }
+</style>

@@ -8,7 +8,7 @@
             <div class="col-sm-1"></div>
             <div class="col-sm-7">
                 <h4>{{ person.name }}</h4>
-                <div class="text-secondary fw-bold">{{ person.role }}</div>
+                <div class="fw-bold" id="person_role">{{ person.role }}</div>
                 <div id="person_cv">{{ person.cv }}</div>
             </div>
         </div>
@@ -53,5 +53,8 @@
     }
     #supervisedProjects ul{
         margin-top: 10px;
+    }
+    #person_role{
+        color: var(--secondary-text);
     }
 </style>
