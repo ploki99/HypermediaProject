@@ -6,7 +6,9 @@ export default defineEventHandler(async (event) => {
     const client = serverSupabaseClient(event);
 
     const { data, error }= await client.from('projects')
-                        .select("id, name, description, picture , people(id , name), areas(id, name) ")
+                        .select("id, name, picture, overview, large_picture, \
+                         startup_name, startup_description, startup_picture, description,  \
+                         people(id , name, picture), areas(id, name) ")
                         .eq('id', id).limit(1).single();
     
     if(error) {
