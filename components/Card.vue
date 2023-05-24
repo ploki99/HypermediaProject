@@ -26,6 +26,8 @@
     .card{
         margin-left: 40px;
         margin-bottom: 20px;
+        border-color: var(--divider-color);
+        max-width: 90%;
     }
     .card img{
         margin-top: 10px;

@@ -1,10 +1,10 @@
 <template>
     <div class="row projectItem align-items-center">
-        <div class="col-sm-1">
+        <div class="col-md-1">
             <img :src="images[picture]" class="rounded" alt="related image">
         </div>
-        <div class="col-sm-9">{{ name }}</div>
-        <div class="col-sm-2">
+        <div class="col-md-9">{{ name }}</div>
+        <div class="col-md-2">
             <NuxtLink :to = "link" class="btn btn-light">More info...</NuxtLink>
         </div>
     </div>
@@ -20,8 +20,9 @@
 <style>
     .projectItem{
         min-height: 50px;
+        max-width: 95%;
         margin: 10px;
-        border: 1px solid #6c757d;
+        border: 1px solid var(--divider-color);
         border-radius: 4px;
         padding-top: 10px;
         padding-bottom: 10px;

@@ -1,7 +1,7 @@
 <template>
     
-    <img id="projectImage" :src="images[project.large_picture]" alt="project image">
-    <div id="projectName">
+    <img class="introImage" :src="images[project.large_picture]" alt="project image">
+    <div class="introName">
         <div class="container">
             <Breadcrumb :pathNames="pathNames" :pathLinks="pathLinks" />
             <h2>{{ project.name }}</h2>
@@ -61,22 +61,6 @@
 </template>
 
 <style>
-    #projectImage{
-        margin-top: -18px;
-        min-width: 100%;
-        max-width: 100%;
-    }
-    #projectName{
-        margin-bottom: 10px;
-        background-color: var(--primary-text);
-        opacity: 0.9;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    #projectName h2{
-        color: var(--text-icons);
-        font-weight: bold;
-    }
     #projectIcon{
         width: 50px;
     }
@@ -100,10 +84,6 @@
     .projectTitle{
         margin-top: 30px;
         margin-bottom: 20px;
-    }
-    /*make breadcrumb more visible */
-    #projectName .breadcrumb-item.active{
-        color: var(--text-icons);
     }
 </style>
 

@@ -78,6 +78,20 @@
     .footerLink:hover{
       color: var(--primary-text);
     }
+    /* Code to have footer always on page bottom */
+    html, body, #__nuxt, .page {
+        height: 100%;
+    }
+    .page {
+        display: flex;
+        flex-direction: column;
+    }
+    .content {
+        flex: 1 0 auto;
+    }
+    footer {
+        flex-shrink: 0;
+    }
 </style>
 
 <script setup>

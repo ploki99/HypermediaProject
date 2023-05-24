@@ -1,23 +1,25 @@
-/* Code to have footer always on page bottom */
-html, body, #__nuxt, .page {
-    height: 100%;
+/*style pages with image right after the navbar*/
+.introImage{
+    margin-top: -18px;
+    min-width: 100%;
+    max-width: 100%;
 }
-.page {
-    display: flex;
-    flex-direction: column;
+.introName{
+    margin-bottom: 10px;
+    background-color: var(--primary-text);
+    opacity: 0.9;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
-.content {
-    flex: 1 0 auto;
+.introName h2{
+    color: var(--text-icons);
+    font-weight: bold;
 }
-footer {
-    flex-shrink: 0;
+/*make breadcrumb more visible */
+.introName .breadcrumb-item.active{
+    color: var(--text-icons);
 }
 
-/*formatting main*/
-main{
-    padding-top: 20px;
-    padding-bottom: 50px;
-}
 
 /*color palette variables*/
 :root{

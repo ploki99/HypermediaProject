@@ -17,4 +17,9 @@
     .content{
         padding-top: 90px;
     }
+    /*formatting main*/
+    main{
+        padding-top: 20px;
+        padding-bottom: 50px;
+    }
 </style>
