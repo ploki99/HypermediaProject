@@ -32,6 +32,7 @@
 
         <p v-html="area.description2"></p>
 
+        <NavigationLinks :prevLink="'/areas/'+prevId" :nextLink="'/areas/'+nextId" />
 
     </main>
 </template>
@@ -66,5 +67,10 @@
     const pathLinks = ["/","/areas"];
     //set last project pages visited
     stateStore.setDefaultLastProject();
-    
+
+    //set prev and next link
+    const {data: areas} = await useFetch('/api/areas');
+    const ret = getPrevNextIds(areas.value,id);
+    const prevId = ret[0];
+    const nextId = ret[1];
 </script>

@@ -16,6 +16,7 @@
             <h3>Supervised projects</h3>
             <Project v-for="p of person.projects" :name="p.name" :link="'/projects/'+p.id" :picture="p.picture" />
         </div>
+        <NavigationLinks :prevLink="'/team/'+prevId" :nextLink="'/team/'+nextId" />
     </main>
 </template>
 
@@ -39,6 +40,11 @@
     //set last project pages visited
     stateStore.setDefaultLastProject();
     
+    //set prev and next link
+    const {data: people} = await useFetch('/api/team');
+    const ret = getPrevNextIds(people.value,id);
+    const prevId = ret[0];
+    const nextId = ret[1];
 </script>
 
 <style>

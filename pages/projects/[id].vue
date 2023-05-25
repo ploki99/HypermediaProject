@@ -57,6 +57,7 @@
                 <p v-html="project.startup_description"></p>
             </div>
         </div>
+        <NavigationLinks :prevLink="'/projects/'+prevId" :nextLink="'/projects/'+nextId" />
     </main>
 </template>
 
@@ -103,5 +104,28 @@
     //set path for breadcrub
     const pathNames = ["Home",stateStore.lastProjectPage,project.value.name];
     const pathLinks = ["/",stateStore.lastProjectLink];
+
+    //set prev and next link
+    const {data: projects} = await useFetch('/api/projects');
+    let ret;
+    if (stateStore.lastProjectLink === "/projects"){
+        ret = getPrevNextIds(projects.value,id);
+    }
+    else if (stateStore.lastProjectLink === "/projects/most_relevant"){
+        const {data: relevantProjets} = await useFetch('/api/projects/most_relevant');
+        ret = getPrevNextIds(relevantProjets.value,id);
+    }
+    else if (stateStore.lastProjectLink === "/projects/by_area"){
+        //lamda expression to check if a project is in a certain area
+        const condition = (obj) => {
+            for ( let a of obj.areas)
+                if (a.name === stateStore.lastArea)
+                    return true;
+            return false;
+        }
+        ret = getPrevNextIds(projects.value,id,condition);
+    }
+    const prevId = ret[0];
+    const nextId = ret[1];
     
 </script>

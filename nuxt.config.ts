@@ -30,9 +30,10 @@ export default defineNuxtConfig({
             link:[
                 {href:"https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css", rel:"stylesheet"}
             ],
-            //bootstrap 5 js
-            script: [
-                { src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js'}
+            //bootstrap 5 js and fontawesone library (used for icons)
+            script: [        
+                { src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js'},
+                { src: "https://kit.fontawesome.com/13b677acda.js", crossorigin:"anonymous"}
             ],
             charset: "utf-8",
             meta: [
