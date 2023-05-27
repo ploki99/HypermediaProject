@@ -1,3 +1,7 @@
+<!--
+    Element of project list    
+-->
+
 <template>
     <div class="row projectItem align-items-center">
         <div class="col-md-1">

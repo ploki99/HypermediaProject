@@ -17,5 +17,5 @@ export function getPrevNextIds(data,id,condition=false) {
     const idx = idList.indexOf(parseInt(id));
     const prevId = idList[(idx + idList.length -1) % idList.length];
     const nextId = idList[(idx+1) % idList.length];
-    return [prevId,nextId];
+    return [prevId,nextId,idx,idList.length];
 }

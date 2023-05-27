@@ -1,3 +1,7 @@
+<!--
+    Breadcrumb of the pages
+-->
+
 <template>
     <div class="container-fluid">
         <ul class="breadcrumb">

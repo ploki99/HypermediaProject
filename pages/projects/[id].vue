@@ -1,19 +1,14 @@
 <template>
-    
-    <img class="introImage" :src="images[project.large_picture]" alt="project image">
-    <div class="introName">
-        <div class="container">
-            <Breadcrumb :pathNames="pathNames" :pathLinks="pathLinks" />
-            <h2>{{ project.name }}</h2>
-        </div>
-    </div>    
+ 
+    <!--Intro image with title-->
+    <IntroImage :title="project.name" :picture="project.large_picture" :pathNames="pathNames" :pathLinks="pathLinks"/>
 
     <main class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-md-2">
-                        <img :src="images[project.picture]" id="projectIcon" alt="project icon">
+                        <img :src="images[project.picture]" id="projectIcon" alt="">
                     </div>
                     <div class="col-md-10 d-flex align-items-center">
                         <h5>Designed by {{ project.startup_name }}</h5>
@@ -27,11 +22,11 @@
             <div class="col-md-5">
                 <div class="row" id="companyArea">
                     <h4 class="text-center">In our company</h4>
-                    <div class="col-5" id="supImgContainer">
+                    <div class="col-5 container" id="supImgContainer">
                         <img :src="images[project.people.picture]" class="rounded" id="projectSupervisor" :alt="project.people.name + ' image'">
                     </div>
-                    <div class="col-7">
-                        <div class="row">
+                    <div class="col-7 container" id="supervisorAndAreas">
+                        <div class="row mt-2">
                             <div class="col"><h5>Supervisor</h5></div>
                             <div class="col"><NuxtLink :to="'/team/' + project.people.id" class="pageLink">{{ project.people.name }}</NuxtLink></div>
                         </div>
@@ -57,7 +52,7 @@
                 <p v-html="project.startup_description"></p>
             </div>
         </div>
-        <NavigationLinks :prevLink="'/projects/'+prevId" :nextLink="'/projects/'+nextId" />
+        <NavigationLinks :prevLink="'/projects/'+prevId" :nextLink="'/projects/'+nextId" :currPage="currPage" :totPages="totPages"/>
     </main>
 </template>
 
@@ -86,6 +81,23 @@
         margin-top: 30px;
         margin-bottom: 20px;
     }
+
+    /* manage responsiveness */
+    @media screen and (max-width: 1200px) and (min-width: 767px) {
+        #supervisorAndAreas {
+            margin-left: 5%;
+            margin-right: 5%;
+            width: 90%;
+        }
+    }
+    @media screen and (max-width: 430px){
+        #supervisorAndAreas {
+            margin-left: 5%;
+            margin-right: 5%;
+            width: 90%;
+        }
+    }
+
 </style>
 
 <script setup>
@@ -102,10 +114,13 @@
     const images = getAllImages();
 
     //set path for breadcrub
-    const pathNames = ["Home",stateStore.lastProjectPage,project.value.name];
+    let lpp = stateStore.lastProjectPage;
+    if (stateStore.lastProjectLink === "/projects/by_area")
+        lpp += ": " + stateStore.lastArea;
+    const pathNames = ["Home",lpp,project.value.name];
     const pathLinks = ["/",stateStore.lastProjectLink];
 
-    //set prev and next link
+    //set navigation links
     const {data: projects} = await useFetch('/api/projects');
     let ret;
     if (stateStore.lastProjectLink === "/projects"){
@@ -127,5 +142,7 @@
     }
     const prevId = ret[0];
     const nextId = ret[1];
+    const currPage = ret[2] + 1;
+    const totPages = ret[3];
     
 </script>

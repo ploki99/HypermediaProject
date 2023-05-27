@@ -3,30 +3,36 @@
 -->
 
 <template>
-    <div id="navigationLinks">
-        <NuxtLink :to="prevLink">
-            <i class="fa-solid fa-angle-left fa-2xl"></i>
-            <i class="fa-solid fa-minus fa-xl" id="prevLine"></i>
-            <span>Prev</span>
-        </NuxtLink>
-        <NuxtLink :to="nextLink" id="nextLink">
-            <span>Next</span>
-            <i class="fa-solid fa-minus fa-xl" id="nextLine"></i>
-            <i class="fa-solid fa-angle-right fa-2xl"></i>
-        </NuxtLink>
+    <div id="navigationLinks" class="row">
+        <div class="col-6 position-relative">
+            <NuxtLink :to="prevLink" id="prevLink">
+                <i class="fa-solid fa-angle-left fa-2xl"></i>
+                <i class="fa-solid fa-minus fa-xl" id="prevLine"></i>
+                <span>Prev</span>
+            </NuxtLink>
+            <span class="position-absolute pageIndicator" id="currPage">{{ currPage }}</span>
+            <span class="position-absolute pageIndicator" id="divPage">/</span>
+        </div>
+        <div class="col-6 position-relative">
+            <span class="position-absolute pageIndicator" id="totPage">{{ totPages }}</span>
+            <NuxtLink :to="nextLink" id="nextLink">
+                <span>Next</span>
+                <i class="fa-solid fa-minus fa-xl" id="nextLine"></i>
+                <i class="fa-solid fa-angle-right fa-2xl"></i>
+            </NuxtLink>
+        </div>
     </div>
 </template>
 
 <script setup>
     //define props
-    const props = defineProps(['prevLink', 'nextLink']);
+    const props = defineProps(['prevLink', 'nextLink','currPage','totPages']);
 </script>
 
 <style>
     #navigationLinks{
-        margin-top: 30px;
+        margin-top: 70px;
         width: 100%;
-        position: relative;
     }
     #navigationLinks a, #navigationLinks a span {
         text-decoration: none;
@@ -35,9 +41,13 @@
     #navigationLinks a:hover, #navigationLinks a span:hover {
         color: var(--dark-primary-color);
     }
-    #nextLink{
+    #prevLink{
         position: absolute;
-        right: 10px;
+        right: 15%; 
+    }
+    #nextLink{
+        position: relative;
+        left: 15%; 
     }
     #prevLine{
         margin-right: 10px;
@@ -47,4 +57,20 @@
         margin-right: -10px;
         margin-left: 10px;
     }
+    /*style current page / total pages */
+    #currPage{
+        right: 0;
+        padding-right: 2%;
+    }
+    #divPage{
+        right: -0.2rem;
+    }
+    #totPage{
+        left: 0;
+        padding-left: 2%;
+    }
+    .pageIndicator{
+        color: var(--secondary-text);
+    }
+
 </style>

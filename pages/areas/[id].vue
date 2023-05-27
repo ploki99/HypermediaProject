@@ -1,14 +1,7 @@
 <template>
 
-    <!-- TODO: create a component -->
-    <img class="introImage" :src="images[area.picture]" alt="area image">
-    <div class="introName">
-        <div class="container">
-            <Breadcrumb :pathNames="pathNames" :pathLinks="pathLinks" />
-            <h2>{{ area.name }}</h2>
-        </div>
-    </div> 
-
+    <!--Intro image with title-->
+    <IntroImage :title="area.name" :picture="area.picture + '_intro'" :pathNames="pathNames" :pathLinks="pathLinks"/>
 
     <main class="container">
         <div class="row">
@@ -26,13 +19,13 @@
                 <p v-html="area.description"></p>
             </div>
             <div class="col-md-5 text-center">
-                <img id="secondImage" :src="images[area.picture2]" alt="area image" class="img-fluid rounded">
+                <img id="secondImage" :src="images[area.picture2]" alt="" class="img-fluid rounded">
             </div>
         </div>
 
         <p v-html="area.description2"></p>
 
-        <NavigationLinks :prevLink="'/areas/'+prevId" :nextLink="'/areas/'+nextId" />
+        <NavigationLinks :prevLink="'/areas/'+prevId" :nextLink="'/areas/'+nextId" :currPage="currPage" :totPages="totPages"/>
 
     </main>
 </template>
@@ -66,11 +59,15 @@
     const pathNames = ["Home","Areas",area.value.name];
     const pathLinks = ["/","/areas"];
     //set last project pages visited
-    stateStore.setDefaultLastProject();
+    stateStore.setLastProjectPage("Projects by area");
+    stateStore.setLastProjectLink("/projects/by_area");
+    stateStore.setLastArea(area.value.name);
 
-    //set prev and next link
+    //set navigation links
     const {data: areas} = await useFetch('/api/areas');
     const ret = getPrevNextIds(areas.value,id);
     const prevId = ret[0];
     const nextId = ret[1];
+    const currPage = ret[2] + 1;
+    const totPages = ret[3];
 </script>

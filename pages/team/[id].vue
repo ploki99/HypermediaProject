@@ -16,7 +16,7 @@
             <h3>Supervised projects</h3>
             <Project v-for="p of person.projects" :name="p.name" :link="'/projects/'+p.id" :picture="p.picture" />
         </div>
-        <NavigationLinks :prevLink="'/team/'+prevId" :nextLink="'/team/'+nextId" />
+        <NavigationLinks :prevLink="'/team/'+prevId" :nextLink="'/team/'+nextId" :currPage="currPage" :totPages="totPages"/>
     </main>
 </template>
 
@@ -40,15 +40,17 @@
     //set last project pages visited
     stateStore.setDefaultLastProject();
     
-    //set prev and next link
+    //set navigation links
     const {data: people} = await useFetch('/api/team');
     const ret = getPrevNextIds(people.value,id);
     const prevId = ret[0];
     const nextId = ret[1];
+    const currPage = ret[2] + 1;
+    const totPages = ret[3];
 </script>
 
 <style>
-    #img_div,img{
+    #img_div img{
         width: 300px;
     }
     #person_cv{

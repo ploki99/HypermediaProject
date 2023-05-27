@@ -1,3 +1,7 @@
+<!--
+    Card component
+-->
+
 <template>
 
     <div class="card" :style="cardWidth" >
@@ -5,7 +9,7 @@
         <div class="card-body">
             <h4 class="card-title">{{ title }}</h4>
             <p class="card-text">{{ subtitle }}</p>
-            <div class="text-center">
+            <div class="text-center" v-if="link!=''">
                 <NuxtLink :to = "link" class="btn btn-primary">More details</NuxtLink>
             </div>
         </div>
@@ -24,13 +28,13 @@
 
 <style>
     .card{
-        margin-left: 40px;
-        margin-bottom: 20px;
+        margin-right: 20px;
+        margin-left: 20px;
+        margin-bottom: 30px;
         border-color: var(--divider-color);
         max-width: 90%;
-    }
-    .card img{
-        margin-top: 10px;
+        padding-left: 0;
+        padding-right: 0;
     }
     .btn-primary{
         background-color: var(--accent-color);

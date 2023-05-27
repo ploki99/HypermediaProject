@@ -5,7 +5,9 @@ export default defineEventHandler(async (event) => {
     
     const client = serverSupabaseClient(event);
 
-    const { data, error }= await client.from('areas').select("id, name, description, description2, picture, picture2, overview, projects(id, name, picture) ").eq('id', id).limit(1).single();
+    const { data, error }= await client.from('areas').select("id, name, description, description2, picture, picture2, overview, projects(id, name, picture) ")
+                            .eq('id', id).limit(1).single()
+                            .order('name',{foreignTable:"projects"});
     
     if(error) {
         throw createError({statusCode: 400, statusMessage: error.message});

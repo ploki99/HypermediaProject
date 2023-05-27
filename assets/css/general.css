@@ -1,26 +1,3 @@
-/*style pages with image right after the navbar*/
-.introImage{
-    margin-top: -18px;
-    min-width: 100%;
-    max-width: 100%;
-}
-.introName{
-    margin-bottom: 10px;
-    background-color: var(--primary-text);
-    opacity: 0.9;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.introName h2{
-    color: var(--text-icons);
-    font-weight: bold;
-}
-/*make breadcrumb more visible */
-.introName .breadcrumb-item.active{
-    color: var(--text-icons);
-}
-
-
 /*color palette variables*/
 :root{
     --dark-primary-color:#00796B;
@@ -35,7 +12,6 @@
 }
 
 /*default text color*/
-
 h1,h2,h3,h4,h5,h6,h7,div,span,p{
     color: var(--primary-text);
 }

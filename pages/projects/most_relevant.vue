@@ -9,10 +9,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="i of [0,1,2,3,4]">
-                    <td class="align-middle text-center">{{ i+1 }}</td>
+                <tr v-for="i of projects.length">
+                    <td class="align-middle text-center">{{ i }}</td>
                     <td>
-                        <Project :name="projects[i].name" :link="'/projects/'+projects[i].id" :picture="projects[i].picture"  />
+                        <Project :name="projects[i-1].name" :link="'/projects/'+projects[i-1].id" :picture="projects[i-1].picture"  />
                     </td>
                 </tr>
             </tbody>
