@@ -1,6 +1,11 @@
 <template>
     <Breadcrumb :pathNames="pathNames" :pathLinks="pathLinks" />
     <main class="container">
+        <h2>Most relevant projects</h2>
+        <p>As a company, we take great pride in all of our work, but we understand that some projects stand 
+            out above the rest. In this section you will find the list of <b>our top {{ projects.length }} projects</b> supervised.
+            We are excited to share these projects with you and hope you find them as impressive as we do. 
+            Take a look and discover how we have helped to shape the future of various industries!</p>
         <table class="table table-borderless">
             <thead>
                 <tr class="text-center">

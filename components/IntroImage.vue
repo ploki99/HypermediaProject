@@ -2,7 +2,7 @@
     Title for pages with image right after the navbar
 -->
 <template>
-    <img class="introImage" :src="images[picture]" :alt="title + ' image'">
+    <img class="introImage" :src="images[picture]" alt="">
     <div class="introName">
         <div class="container">
             <Breadcrumb :pathNames="pathNames" :pathLinks="pathLinks" />

@@ -35,7 +35,13 @@ export default defineNuxtConfig({
                 { src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js'},
                 { src: "https://kit.fontawesome.com/13b677acda.js", crossorigin:"anonymous"}
             ],
+            //define charset
             charset: "utf-8",
+            //define language
+            htmlAttrs:{
+                lang: "en"
+            },
+            //define meta
             meta: [
                 {
                     name: "viewport",

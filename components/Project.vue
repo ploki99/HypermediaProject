@@ -5,7 +5,7 @@
 <template>
     <div class="row projectItem align-items-center">
         <div class="col-md-1">
-            <img :src="images[picture]" class="rounded" alt="related image">
+            <img :src="images[picture]" class="rounded" alt="project icon">
         </div>
         <div class="col-md-9">{{ name }}</div>
         <div class="col-md-2">

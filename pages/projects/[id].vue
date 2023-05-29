@@ -8,13 +8,13 @@
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-md-2">
-                        <img :src="images[project.picture]" id="projectIcon" alt="">
+                        <img :src="images[project.picture]" id="projectIcon" alt="project icon">
                     </div>
                     <div class="col-md-10 d-flex align-items-center">
                         <h5>Designed by {{ project.startup_name }}</h5>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mt-3">
                     <p v-html="project.overview"></p>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                 <div class="row" id="companyArea">
                     <h4 class="text-center">In our company</h4>
                     <div class="col-5 container" id="supImgContainer">
-                        <img :src="images[project.people.picture]" class="rounded" id="projectSupervisor" :alt="project.people.name + ' image'">
+                        <img :src="images[project.people.picture]" class="rounded" id="projectSupervisor" :alt="project.people.name">
                     </div>
                     <div class="col-7 container" id="supervisorAndAreas">
                         <div class="row mt-2">
@@ -46,7 +46,7 @@
         <h3 class="projectTitle">{{ project.startup_name }}</h3>
         <div class="row">
             <div class="col-md-4">
-                <img :src="images[project.startup_picture]" class="rounded img-fluid" :alt="project.startup_name + ' group image'" >
+                <img :src="images[project.startup_picture]" class="rounded img-fluid" :alt="project.startup_name + ' team'" >
             </div>
             <div class="col-md-8">
                 <p v-html="project.startup_description"></p>

@@ -6,7 +6,7 @@
 
     <nav class="navbar navbar-expand-md navbar-dark p-3 fixed-top">
 	    <div class="container-fluid">
-	      <NuxtLink to="/" class="navbar-brand" ><img src="~/assets/img/logo.png" id="logo"> </NuxtLink>
+	      <NuxtLink to="/" class="navbar-brand" ><img src="~/assets/img/logo.png" id="logo" alt="Bright Futures"> </NuxtLink>
 	      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="navbar-toggler-icon"></span>
 	      </button>

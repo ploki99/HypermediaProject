@@ -19,14 +19,14 @@
         <div class="carousel-inner">
             <span v-for="i of indexes">
                 <div v-if="i===0" class="carousel-item active">
-                    <img :src="images[carouselData[i].picture]" :alt="carouselData[i].name + ' picture'" class="d-block w-100">
+                    <img :src="images[carouselData[i].picture]" alt="" class="d-block w-100">
                     <div class="carousel-caption container">
                         <h5>{{ carouselData[i].name }}</h5>
                         <NuxtLink :to="carouselData[i].link" class="pageLink">See more</NuxtLink>
                     </div>
                 </div>
                 <div v-if="i>0" class="carousel-item">
-                    <img :src="images[carouselData[i].picture]" :alt="carouselData[i].name + ' picture'" class="d-block w-100">
+                    <img :src="images[carouselData[i].picture]" alt="" class="d-block w-100">
                     <div class="carousel-caption container">
                         <h5>{{ carouselData[i].name }}</h5>
                         <NuxtLink :to="carouselData[i].link" class="pageLink">See more</NuxtLink>

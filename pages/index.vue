@@ -3,7 +3,7 @@
 -->
 <template>
 
-  <img class="introImage" src="~/assets/img/h_first.jpg">
+  <img id="homeImage" src="~/assets/img/h_first.jpg" alt="">
 
   <section id="hero" class="text-center">
       <div class="container-fluid">
@@ -61,6 +61,11 @@
 
 
 <style>
+    #homeImage{
+        margin-top: -18px;
+        min-width: 100%;
+        max-width: 100%;
+    }
     #hero{
         position: relative;
         width: 100%;

@@ -1,11 +1,11 @@
-/*color palette variables*/
+/*color palette variables (teal/indigo)*/
 :root{
     --dark-primary-color:#00796B;
     --light-primary-color:#B2DFDB;
     --primary-color:#009688;
     --text-icons:#FFFFFF;
-    --accent-color:#7C4DFF;
-    --accent-color2:#9068ff; /* slightly different for doing hover effect */
+    --accent-color: #536DFE;
+    --accent-color2:#687ffe; /* slightly different for doing hover effect */
     --primary-text:#212121;
     --secondary-text:#757575;
     --divider-color:#BDBDBD;

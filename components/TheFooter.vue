@@ -66,10 +66,10 @@
         background-color: var(--light-primary-color);
     }
     .footerLink{
-        color: var(--dark-primary-color);
+        color: var(--primary-text);
     }
     .footerLink:hover{
-        color: var(--primary-text);
+        color: var(--dark-primary-color);
     }
     /* Code to have footer always on page bottom */
     html, body, #__nuxt, .page {

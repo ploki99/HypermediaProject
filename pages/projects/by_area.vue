@@ -1,14 +1,26 @@
 <template>
     <Breadcrumb :pathNames="pathNames" :pathLinks="pathLinks" />
     <main class="container">
-        <select class="form-select" v-model="selectedArea">
-            <option disabled value="">Select one area</option>
-            <option v-for="a of areas">{{ a.name }}</option>
-        </select> 
+        <h2>Projects by area</h2>
+        <p class="lead">Check out our projects categorized by areas of interest.</p>
+        <p>Use the drop-down menu provided to choose the appropriate list of projects relevant to our specific 
+            areas of interest. Feel free to browse and select projects that match your interests.</p>
+        <div class="input-group rounded justify-content-center mt-4 mb-4">
+            <select class="form-select" v-model="selectedArea" id="selectInput">
+                <option disabled value="">Select one area</option>
+                <option v-for="a of areas">{{ a.name }}</option>
+            </select> 
+        </div>
         <Project v-for="p of filteredProjects" :name="p.name" :link="'/projects/'+p.id" :picture="p.picture"  />
     </main>
 
 </template>
+
+<style>
+    #selectInput{
+        max-width: 500px;
+    }
+</style>
 
 <script setup>
     //import pinia store

@@ -2,11 +2,10 @@
     <Breadcrumb :pathNames="pathNames" :pathLinks="pathLinks" />
     <main class="container">
         <div class="row">
-            <div class="col-sm-4" id="img_div">
-                <img :src="images[person.picture]" class="rounded" :alt="person.name + ' image'" > 
+            <div class="col-md-5" id="img_div">
+                <img :src="images[person.picture]" class="rounded img-fluid" :alt="person.name" > 
             </div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-7">
+            <div class="col-md-7 ml-5">
                 <h4>{{ person.name }}</h4>
                 <div class="fw-bold" id="person_role">{{ person.role }}</div>
                 <div id="person_cv">{{ person.cv }}</div>

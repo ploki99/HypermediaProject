@@ -5,7 +5,7 @@
 <template>
 
     <div class="card" :style="cardWidth" >
-        <img class="card-img-top" :src="images[pic_name]" :alt="title + ' image'">
+        <img class="card-img-top" :src="images[pic_name]" alt="">
         <div class="card-body">
             <h4 class="card-title">{{ title }}</h4>
             <p class="card-text">{{ subtitle }}</p>
