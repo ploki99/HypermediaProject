@@ -56,4 +56,10 @@
     //set last project pages visited
     stateStore.setLastProjectPage("Projects by area");
     stateStore.setLastProjectLink("/projects/by_area");
+
+    //set meta tag
+    useSeoMeta({
+        title: "Projects by area - Bright Futures",
+        description: "Explore our wide range of supervised projects by area of interest. A comprehensive guide to Bright Futures venture capital, discover unique investment opportunities today!"
+    });
 </script>

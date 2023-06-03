@@ -144,5 +144,11 @@
     const nextId = ret[1];
     const currPage = ret[2] + 1;
     const totPages = ret[3];
+
+    //set meta tag
+    useSeoMeta({
+        title: project.value.name + " - Bright Futures",
+        description: "Discover the beautiful project '" + project.value.name + "' designed by " + project.value.startup_name + " that our company helped to grow thanks to the supervision of " + project.value.people.name + "."
+    });
     
 </script>

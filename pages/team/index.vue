@@ -23,4 +23,9 @@
     const pathLinks = ["/"];
     //set last project pages visited
     stateStore.setDefaultLastProject();
+    //set meta tag
+    useSeoMeta({
+        title: "Team - Bright Futures",
+        description: "Are you looking for information about our team? Here we proudly showcase our talented group of professionals who work tirelessly to provide exceptional investment services and strategies."
+    });
 </script>

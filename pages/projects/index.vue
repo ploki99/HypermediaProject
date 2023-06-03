@@ -71,4 +71,10 @@
     const pathLinks = ["/"];
     //set last project pages visited
     stateStore.setDefaultLastProject();
+
+    //set meta tag
+    useSeoMeta({
+        title: "All projects - Bright Futures",
+        description: "Discover the projects overseen by our top-notch venture capital firm. Our team of experts ensures that each project meets the highest industry standards, explore our portfolio today and find out how we can help you take your investment to the next level."
+    });
 </script>

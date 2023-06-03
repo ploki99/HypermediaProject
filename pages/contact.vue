@@ -70,4 +70,10 @@
     const pathLinks = ["/"];
     //set last project pages visited
     stateStore.setDefaultLastProject();
+
+    //set meta tag
+    useSeoMeta({
+        title: "Contact us - Bright Futures",
+        description: "Want to get in touch with a reputable venture capital firm for your startup? Our team of experienced venture capitalists has a proven track record of helping startups grow and scale. Fill out our simple contact form to get in touch with us today."
+    });
 </script>

@@ -46,6 +46,12 @@
     const nextId = ret[1];
     const currPage = ret[2] + 1;
     const totPages = ret[3];
+
+    //set meta tag
+    useSeoMeta({
+        title: person.value.name + " - Bright Futures",
+        description: "Check out the incredible resume and the supervised projects of " + person.value.name + ", who currently works as an " + person.value.role + " in our company."
+    });
 </script>
 
 <style>

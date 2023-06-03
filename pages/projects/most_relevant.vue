@@ -38,4 +38,10 @@
     //set last project pages visited
     stateStore.setLastProjectPage("Most relevant projects");
     stateStore.setLastProjectLink("/projects/most_relevant");
+
+    //set meta tag
+    useSeoMeta({
+        title: "Most relevant projects - Bright Futures",
+        description: "Discover the " + projects.value.length + " best venture capital projects with expert supervision. Our page presents the most innovative and successful projects supported by our company."
+    });
 </script>

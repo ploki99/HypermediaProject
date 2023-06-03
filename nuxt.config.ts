@@ -25,6 +25,7 @@ export default defineNuxtConfig({
 
     app:{
         head:{
+            //set default title
             title : "Bright Futures",
             //bootstrap 5 css
             link:[
@@ -46,6 +47,10 @@ export default defineNuxtConfig({
                 {
                     name: "viewport",
                     content: "width=device-width, initial-scale=1" 
+                },
+                {
+                    name: "robots",
+                    content: "index"
                 }
             ]
         }
