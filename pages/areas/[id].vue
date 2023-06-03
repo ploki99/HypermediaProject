@@ -70,4 +70,10 @@
     const nextId = ret[1];
     const currPage = ret[2] + 1;
     const totPages = ret[3];
+
+    //set meta tag
+    useSeoMeta({
+        title: area.value.name + " - Bright Futures",
+        description: "Find out why we invest in " + area.value.name + " and what amazing projects have been accomplished in this area."
+    });
 </script>

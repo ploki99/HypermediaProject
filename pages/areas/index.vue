@@ -23,4 +23,10 @@
     const pathLinks = ["/"];
     //set last project pages visited
     stateStore.setDefaultLastProject();
+
+    //set meta tag
+    useSeoMeta({
+        title: "Areas - Bright Futures",
+        description: "Learn about the exciting areas of interest of our cutting-edge venture capital firm. Explore the latest trends. Learn how our firm is leading the way in providing innovative solutions to the world's biggest challenges."
+    });
 </script>

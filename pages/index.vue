@@ -121,4 +121,10 @@
     //set last project pages visited
     stateStore.setLastProjectPage("Most relevant projects");
     stateStore.setLastProjectLink("/projects/most_relevant");
+
+    //set meta tag
+    useSeoMeta({
+        title: "Bright Futures",
+        description: "Welcome to Bright Futures, we are experienced investors and entrepreneurs helping early stage startups succeed through funding, mentorship, and industry expertise."
+    });
 </script>

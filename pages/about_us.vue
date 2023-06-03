@@ -36,4 +36,10 @@
     const pathLinks = ["/"];
     //set last project pages visited
     stateStore.setDefaultLastProject();
+
+    //set meta tag
+    useSeoMeta({
+        title: "About us - Bright Futures",
+        description: "Discover our passion for investing in innovative ideas and opportunities with our company. Get to know us better and start exploring the world-changing possibilities we bring to the table."
+    });
 </script>
