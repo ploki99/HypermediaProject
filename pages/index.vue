@@ -113,7 +113,6 @@
         a['name'] = projects.value[i].name;
         a['link'] = '/projects/' + projects.value[i].id;
         a['picture'] = projects.value[i].large_picture;
-        a['picture'] = 'a1_intro';
         carouselData.push(a);
         indexes.push(i);
     }

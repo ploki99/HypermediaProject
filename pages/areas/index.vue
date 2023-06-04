@@ -1,6 +1,6 @@
 <template>
     <Breadcrumb :pathNames="pathNames" :pathLinks="pathLinks" />
-    <main class="container-fluid">
+    <main class="container">
         <h2>Our areas of interest</h2>
         <p class="mb-5">In a world studded with endless possibilities, our areas of interest are the paths 
             that guide you toward the realization of your <b>dreams</b> and <b>goals</b>.</p>

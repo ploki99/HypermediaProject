@@ -1,11 +1,14 @@
 <template>
     <Breadcrumb :pathNames="pathNames" :pathLinks="pathLinks" />
-    <main class="container-fluid">
-        <h2>Our team</h2>
-        <p class="mb-5">We are ready to discover and invest in the most innovative and 
-            promising start-ups in the market, driving <b>innovation</b> and 
-            <b>change</b> in society.</p>
-        <div class="row justify-content-center">    
+    <main>
+        <div class="container">
+            <h2>Our team</h2>
+            <p class="mb-5">We are ready to discover and invest in the most innovative and 
+                promising start-ups in the market, driving <b>innovation</b> and 
+                <b>change</b> in society.
+            </p>
+        </div>
+        <div class="row justify-content-center container-fluid">    
             <Card v-for = "person of people" :title="person.name" :subtitle="person.role" 
                 :link="'/team/' + person.id" :pic_name="person.picture" :width="'300px'" />
         </div>

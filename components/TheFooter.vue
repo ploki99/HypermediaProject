@@ -33,9 +33,9 @@
                     <!-- Grid column -->
                     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                         <h6 class="text-uppercase mb-4 font-weight-bold">Contact us</h6>
-                        <p> +44 113 761 1243</p>
-                        <p> info@bright-futures.com</p>
-                        <p>London, 24 Oxford St, UK</p>
+                        <p><i class="fa-solid fa-phone fa-xs me-2"></i>+44 123 456 7890</p>
+                        <p><i class="fa-solid fa-envelope fa-xs me-2"></i>info@bright-futures.com</p>
+                        <p><i class="fa-solid fa-house fa-xs me-2"></i>London, 24 Oxford St, UK</p>
                     </div>
                     <!-- Grid column -->
                 </div>

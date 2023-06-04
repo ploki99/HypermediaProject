@@ -7,7 +7,8 @@ export default defineNuxtConfig({
 
     modules:[
         '@nuxtjs/supabase',
-        '@pinia/nuxt'
+        '@pinia/nuxt',
+        '@nuxtjs/robots'
     ],
     
     pinia: {
