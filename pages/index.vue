@@ -21,7 +21,7 @@
                     rutrum elit vulputate.</p>
                 </div>
                 <div class="col-lg-6">
-                    <img src="" alt="About Us" class="img-fluid">
+                    <Chart :id="'homeChart'" :dimension="'350px'" />
                 </div>
             </div>
         </div>

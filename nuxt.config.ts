@@ -32,9 +32,14 @@ export default defineNuxtConfig({
             link:[
                 {href:"https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css", rel:"stylesheet"}
             ],
-            //bootstrap 5 js and fontawesone library (used for icons)
+            //javscript libraries
             script: [        
+                //bootstrap 5 js 
                 { src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js'},
+                //Chart.js
+                { src: "https://cdn.jsdelivr.net/npm/chart.js"},
+                { src: "https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"},
+                //fontawesone library (used for icons)
                 { src: "https://kit.fontawesome.com/13b677acda.js", crossorigin:"anonymous"}
             ],
             //define charset
