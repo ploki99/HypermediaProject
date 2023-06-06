@@ -37,7 +37,7 @@ export default defineNuxtConfig({
                 //bootstrap 5 js 
                 { src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js'},
                 //Chart.js
-                { src: "https://cdn.jsdelivr.net/npm/chart.js"},
+                { src: "https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"},
                 { src: "https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"},
                 //fontawesone library (used for icons)
                 { src: "https://kit.fontawesome.com/13b677acda.js", crossorigin:"anonymous"}
