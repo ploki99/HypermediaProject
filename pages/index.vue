@@ -3,22 +3,35 @@
 -->
 <template>
 
-  <img id="homeImage" src="~/assets/img/h_first.jpg" alt="">
+    <img id="homeImage" src="~/assets/img/h_first.jpg" alt="">
 
-  <section id="hero" class="text-center">
-      <div class="container-fluid">
-          <h1 class="display-3 fw-bold">Welcome to Bright Futures</h1>
-          <p class="lead display-6">We invest in innovative startups and help them grow.</p>
-      </div>
-  </section>
+    <section id="hero" class="text-center">
+        <div class="container-fluid">
+            <h1 class="display-3 fw-bold">Welcome to Bright Futures</h1>
+            <p class="lead display-6">We invest in innovative startups and help them grow.</p>
+        </div>
+    </section>
 
     <section id="about" class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <h2>About Us</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultricies tellus nec felis sagittis, vitae
-                    rutrum elit vulputate.</p>
+                    <h2 class="mb-4">About Us</h2>
+                    <p>We are Bright Futures, an experienced team of investors with expertise in technology, finance and operations. 
+                        We invest in innovative startups and provide support to guide them to success. Our company specializes in  
+                        <span v-for="idx of areas.length">
+                            <span>{{ areas[idx-1].name }}</span>
+                            <span v-if="idx===areas.length">.</span>
+                            <span v-else-if="idx===areas.length-1"> and </span>
+                            <span v-else>, </span>
+                        </span>
+                        We currently have several ongoing projects, each of which is related to one or more of our areas of interest.
+                    </p>
+                    <p>
+                        Founded in 2010, our portfolio includes companies that create social and environmental change. We have 
+                        established partnerships with universities and raised new funds in 2018. Today, we are a leader in early 
+                        stage investing, committed to innovation, sustainability, and social impact.
+                    </p>
                 </div>
                 <div class="col-lg-6">
                     <Chart :id="'homeChart'" :dimension="'350px'" />
@@ -26,8 +39,16 @@
             </div>
         </div>
     </section>
+    
+    <section id="portfolio" class="bg-light py-5">
+        <div class="container">
+            <h2>Our Portfolio</h2>
+            <p class="lead">We successfully supervise several projects, here is a selection of the most relevant ones.</p>
+            <Carousel :id="'homeCarousel'" :indexes="indexes" :carouselData="carouselData" />
+        </div>
+    </section>
 
-    <section id="services" class="bg-light py-5">
+    <section id="services" class="py-5">
         <div class="container">
             <h2 class="mb-4">Our Services</h2>
             <div class="row">
@@ -38,19 +59,10 @@
         </div>
     </section>
 
-    <section id="portfolio" class="py-5">
-        <div class="container">
-            <h2>Our Portfolio</h2>
-            <p class="lead">We successfully supervise several projects, here is a selection of the most relevant ones.</p>
-            <Carousel :id="'homeCarousel'" :indexes="indexes" :carouselData="carouselData" />
-        </div>
-    </section>
-
-
     <section id="contact" class="bg-light py-5 pb-5">
         <div class="container">
-            <h2>Contact Us</h2>
-            <p class="lead">Join us on our journey and let's create something extraordinary together.</p>
+            <h2>Let's create something extraordinary together.</h2>
+            <p class="lead">We are always looking for new partners who share our vision for a better future. Join us on our journey!</p>
             <div class="text-center">
                 <NuxtLink class="btn btn-primary btn-lg" to="/contact">Contact Us</NuxtLink>
             </div>
@@ -105,6 +117,7 @@
     //set data for carousel
 
     //get request from dataset
+    const { data: areas } = await useFetch('/api/areas');
     const { data: projects } = await useFetch('/api/projects/most_relevant');
     let carouselData = [];
     let indexes = [];
