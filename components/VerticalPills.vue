@@ -3,13 +3,13 @@
 -->
 
 <template>
-    <div class="container py-4">
+    <div class="container py-4" :id="id">
         <div class="row">
             <div class="col-md-3">
                 <!-- Tabs nav -->
-                <div class="nav flex-column nav-pills nav-pills-custom" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <div class="nav flex-column nav-pills nav-pills-custom" role="tablist" aria-orientation="vertical">
                     <NuxtLink v-for="i of indexes" :class="'nav-link mb-3 p-3 shadow '+active[i] " :id="idTab[i]" data-bs-toggle="pill" 
-                            :to="'#'+idCont[i]" role="tab" :aria-controls="idCont[i]" :aria-selected="ariaActive[i]">
+                            :to="'#'+idCont[i]" role="tab" :aria-controls="idCont[i]" :aria-selected="ariaActive[i]" @click="updateLastIndex(i)">
                         <span class="small text-uppercase">{{ titles[i] }}</span>
                     </NuxtLink>
                 </div>
@@ -17,7 +17,7 @@
 
             <div class="col-md-9">
                 <!-- Tabs content -->
-                <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-content">
                     <div v-for="i of indexes" :class="'tab-pane fade shadow rounded bg-white p-5 '+show[i]" 
                             :id="idCont[i]" role="tabpanel" :aria-labelledby="idTab[i]">
                         <h4 class="mb-4">{{ titles[i] }}</h4>
@@ -52,7 +52,12 @@
 
 <script setup>
     //define props
-    const props = defineProps(['titles', 'pics', 'descriptions']);
+    const props = defineProps(['id','titles', 'pics', 'descriptions']);
+    //get pills store
+    const pillsStore = usePillsStore();
+    function updateLastIndex(idx){
+        pillsStore.setLastIndex(props.id,idx);
+    }
     //get all images
     const images = getAllImages();
     //create ids
@@ -64,9 +69,9 @@
     let indexes = [];
     for (let i = 0; i<props.titles.length; i++) {
         indexes.push(i);
-        idTab.push('tab'+(i+1));
-        idCont.push('cont'+(i+1));
-        if (i===0) {
+        idTab.push(props.id + '_tab'+(i+1));
+        idCont.push(props.id + '_cont'+(i+1));
+        if (i === pillsStore.getLastIndex(props.id) ) {
             active.push('active');
             show.push('show active');
             ariaActive.push('true');

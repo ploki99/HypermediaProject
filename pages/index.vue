@@ -52,8 +52,9 @@
         <div class="container">
             <h2 class="mb-4">Our Services</h2>
             <div class="row">
-                <div v-for="s of services" class="col-md-4" >
-                    <Card :title="s.name" :subtitle="s.description" :link="''" :pic_name="s.picure" :width="'300px'" />
+                <div v-for="i of services.length" class="col-md-4" >
+                    <Card :title="services[i-1].name" :subtitle="''" :link="'/about_us#services'" 
+                        :pic_name="services[i-1].picure" :width="'270px'" @click="updateServicesClicked(i-1)"/>
                 </div>
             </div>    
         </div>
@@ -113,6 +114,12 @@
                     {name: 'Mentorship',
                      picure: 'h_s3',
                      description: 'We provide guidance and support from experienced professionals to help you achieve your personal and career goals.'}];
+    
+    //get pills store and define function to update services clicked
+    const pillsStore = usePillsStore();
+    function updateServicesClicked(idx){
+        pillsStore.setLastIndex('servicesPills',idx);
+    }
 
     //set data for carousel
 

@@ -67,6 +67,7 @@
                     a smart business decision, but a moral imperative in order to create a more sustainable and equitable world for 
                     future generations. 
                 </h4>
+                <div id="services"></div>
             </div>
         </section>
 
@@ -74,7 +75,7 @@
             <div class="container">
                 <h2 class="mb-4">Our services</h2>
             </div>
-            <VerticalPills :titles="services.titles" :pics="services.pictures" :descriptions="services.descriptions"/>
+            <VerticalPills :id="'servicesPills'" :titles="services.titles" :pics="services.pictures" :descriptions="services.descriptions"/>
         </section>
 
         <section class="py-5">
