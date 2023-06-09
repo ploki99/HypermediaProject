@@ -11,7 +11,7 @@
                 <option v-for="a of areas">{{ a.name }}</option>
             </select> 
         </div>
-        <Project v-for="p of filteredProjects" :name="p.name" :link="'/projects/'+p.id" :picture="p.picture"  />
+        <ListItem v-for="p of filteredProjects" :name="p.name" :link="'/projects/'+p.id" :picture="p.picture" :small="false" alt="project icon" />
     </main>
 
 </template>

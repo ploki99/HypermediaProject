@@ -13,7 +13,7 @@
         </div>
         <div class="row" id="supervisedProjects">
             <h3>Supervised projects</h3>
-            <Project v-for="p of person.projects" :name="p.name" :link="'/projects/'+p.id" :picture="p.picture" />
+            <ListItem v-for="p of person.projects" :name="p.name" :link="'/projects/'+p.id" :picture="p.picture" :small="false" alt="project icon" />
         </div>
         <NavigationLinks :prevLink="'/team/'+prevId" :nextLink="'/team/'+nextId" :currPage="currPage" :totPages="totPages"/>
     </main>

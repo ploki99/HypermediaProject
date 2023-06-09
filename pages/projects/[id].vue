@@ -3,56 +3,65 @@
     <!--Intro image with title-->
     <IntroImage :title="project.name" :picture="project.large_picture" :pathNames="pathNames" :pathLinks="pathLinks"/>
 
-    <main class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-2">
-                        <img :src="images[project.picture]" id="projectIcon" alt="project icon">
-                    </div>
-                    <div class="col-md-10 d-flex align-items-center">
-                        <h5>Designed by {{ project.startup_name }}</h5>
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <p v-html="project.overview"></p>
-                </div>
-            </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-5">
-                <div class="row" id="companyArea">
-                    <h4 class="text-center">In our company</h4>
-                    <div class="col-5 container" id="supImgContainer">
-                        <img :src="images[project.people.picture]" class="rounded" id="projectSupervisor" :alt="project.people.name">
-                    </div>
-                    <div class="col-7 container" id="supervisorAndAreas">
-                        <div class="row mt-2">
-                            <div class="col"><h5>Supervisor</h5></div>
-                            <div class="col"><NuxtLink :to="'/team/' + project.people.id" class="pageLink">{{ project.people.name }}</NuxtLink></div>
+    <main>
+        
+        <section class="container">
+            <div class="row">
+                <div class="col-md-6 pe-4">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img :src="images[project.picture]" id="projectIcon" alt="project icon">
                         </div>
-                        <h5>Related areas</h5>
-                        <div class="list-group">
-                            <NuxtLink v-for="a of project.areas" :to="'/areas/' + a.id" class="list-group-item list-group-item-action">
-                                {{ a.name }} 
-                            </NuxtLink> 
+                        <div class="col-md-10 d-flex align-items-center">
+                            <h5>Designed by {{ project.startup_name }}</h5>
                         </div>
                     </div>
+                    <div class="row mt-3">
+                        <p v-html="project.overview"></p>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <h3 class="projectTitle">What is the project about?</h3>
-        <p v-html="project.description"></p>
 
-        <h3 class="projectTitle">{{ project.startup_name }}</h3>
-        <div class="row">
-            <div class="col-md-4">
-                <img :src="images[project.startup_picture]" class="rounded img-fluid" :alt="project.startup_name + ' team'" >
+                <div class="col-md-6">
+                    <div class="shadow p-3 rounded">
+                        <h4 class="text-center">At Bright Futures</h4>
+                        <div class="row justify-content-center">
+                            <div class="col-5" id="cardContainer">
+                                <Card :pic_name="project.people.picture" :title="project.people.name" subtitle="Supervisor" 
+                                    :link="'/team/' + project.people.id" width="170px"/>
+                            </div>
+                            <div class="col-7 w-auto"> 
+                                <h5 class="mt-3">Related areas</h5>
+                                <div class="list-group">
+                                    <ListItem v-for="a of project.areas" :link="'/areas/' + a.id" :name="a.name" picture="" :small="true" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-8">
-                <p v-html="project.startup_description"></p>
+        </section>
+
+        <section class="bg-light py-2 mt-4">
+            <div class="container">
+                <h3 class="mt-4 mb-3">What is the project about?</h3>
+                <p v-html="project.description"></p>
             </div>
-        </div>
+        </section>
+
+        <section class="container">
+            <h3 class="mt-4 mb-3">{{ project.startup_name }}</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <img :src="images[project.startup_picture]" class="rounded img-fluid" :alt="project.startup_name + ' team'" >
+                </div>
+                <div class="col-md-8">
+                    <p v-html="project.startup_description"></p>
+                </div>
+            </div>
+        </section>
+
         <NavigationLinks :prevLink="'/projects/'+prevId" :nextLink="'/projects/'+nextId" :currPage="currPage" :totPages="totPages"/>
+    
     </main>
 </template>
 
@@ -60,44 +69,9 @@
     #projectIcon{
         width: 50px;
     }
-    #projectSupervisor{
-        width: 150px;
+    #cardContainer{
+        min-width: 170px;
     }
-    #supImgContainer{
-        min-width: 150px;
-    }
-    #companyArea{
-        border: 1px solid var(--divider-color);
-        border-radius: 6px;
-        padding: 10px;
-        margin-top: 10px;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-    #companyArea h4{
-        margin-bottom: 15px;
-    }
-    .projectTitle{
-        margin-top: 30px;
-        margin-bottom: 20px;
-    }
-
-    /* manage responsiveness */
-    @media screen and (max-width: 1200px) and (min-width: 767px) {
-        #supervisorAndAreas {
-            margin-left: 5%;
-            margin-right: 5%;
-            width: 90%;
-        }
-    }
-    @media screen and (max-width: 430px){
-        #supervisorAndAreas {
-            margin-left: 5%;
-            margin-right: 5%;
-            width: 90%;
-        }
-    }
-
 </style>
 
 <script setup>

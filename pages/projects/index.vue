@@ -16,7 +16,7 @@
             </span>
         </div>    
 
-        <Project v-for="p of filteredProjects" :name="p.name" :link="'/projects/'+p.id" :picture="p.picture"  />
+        <ListItem v-for="p of filteredProjects" :name="p.name" :link="'/projects/'+p.id" :picture="p.picture" :small="false" alt="project icon" />
 
         <p v-if="filteredProjects.length===0" class="fw-bold text-center" id="noProjects">No project found.</p>
 

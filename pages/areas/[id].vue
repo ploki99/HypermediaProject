@@ -10,7 +10,7 @@
 
         <div class="row">
             <h3>Our supervised projects</h3>
-            <Project v-for="p of area.projects" :name="p.name" :link="'/projects/'+p.id" :picture="p.picture" />
+            <ListItem v-for="p of area.projects" :name="p.name" :link="'/projects/'+p.id" :picture="p.picture" :small="false" alt="project icon" />
         </div>
 
         <div class="row">
