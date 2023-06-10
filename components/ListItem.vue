@@ -5,7 +5,7 @@
 <template>
     
     <NuxtLink :to = "link" class="row listItem align-items-center shadow" :style="style">
-        <div class="col-md-1 text-center" v-if=" picture != '' ">
+        <div class="col-md-1 text-center" v-if="picture">
             <img :src="images[picture]" :alt="alt">
         </div>
         <div v-if="small" class="col-md-9 ps-3 my-0 py-0">{{ name }}</div>

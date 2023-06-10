@@ -3,7 +3,7 @@
 -->
 
 <template>
-    <button type="button" class="btn btn-floating" id="btn-back-to-top" @click="backToTop">
+    <button  class="btn btn-floating" id="btn-back-to-top" @click="backToTop">
         <i class="fas fa-arrow-up"></i>
     </button>
 </template>

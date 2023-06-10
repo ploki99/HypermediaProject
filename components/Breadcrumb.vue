@@ -3,7 +3,7 @@
 -->
 
 <template>
-    <div class="container-fluid">
+    <div class="container">
         <ul class="breadcrumb">
             <!-- Clickable part of the breadcrumb -->
             <li v-for="i of indexes" class="breadcrumb-item">

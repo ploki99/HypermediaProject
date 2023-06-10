@@ -9,11 +9,6 @@
         </div>
 
         <div class="row">
-            <h3>Our supervised projects</h3>
-            <ListItem v-for="p of area.projects" :name="p.name" :link="'/projects/'+p.id" :picture="p.picture" :small="false" alt="project icon" />
-        </div>
-
-        <div class="row">
             <div class="col-md-7">
                 <h3 class="mt-4 mb-3">Why invest in {{ area.name.toLowerCase() }}?</h3>
                 <p v-html="area.description"></p>
@@ -25,10 +20,17 @@
 
         <p v-html="area.description2"></p>
 
+        <h3 class="pt-4">Take a look at our supervised projects</h3>
+        <p>
+            Explore our portfolio of {{ area.name.toLowerCase() }} projects and discover the innovative solutions we're investing in.
+            <NuxtLink to="/projects/by_area">Click here</NuxtLink> to view the full list and dive into the details!
+        </p>
+   
         <NavigationLinks :prevLink="'/areas/'+prevId" :nextLink="'/areas/'+nextId" :currPage="currPage" :totPages="totPages"/>
 
     </main>
 </template>
+
 
 <script setup>
     //import pinia store

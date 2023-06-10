@@ -32,7 +32,7 @@
                             <div class="col-7" id="relatedAreas"> 
                                 <h5 class="mt-3">Related areas</h5>
                                 <div class="list-group">
-                                    <ListItem v-for="a of project.areas" :link="'/areas/' + a.id" :name="a.name" picture="" :small="true" alt="" />
+                                    <ListItem v-for="a of project.areas" :link="'/areas/' + a.id" :name="a.name" :small="true" alt="" />
                                 </div>
                             </div>
                         </div>

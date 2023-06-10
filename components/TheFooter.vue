@@ -4,7 +4,7 @@
 
 <template>
     <!-- Footer -->
-    <footer class="text-center text-lg-start" >
+    <footer class="text-center text-md-start" >
         <!-- Grid container -->
         <div class="container p-4 pb-0">
             <!-- Section: Links -->
@@ -12,27 +12,31 @@
                 <!--Grid row-->
                 <div class="row">
                     <!-- Grid column -->
-                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h6 class="text-uppercase mb-4 font-weight-bold">Bright Futures</h6>
+                    <div class="col-md-4 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">
+                            <NuxtLink to="/about_us" class="footerLink">Bright Futures</NuxtLink>
+                        </h6>
                         <p>We are experienced investors and entrepreneurs helping early stage startups succeed 
                             through funding, mentorship, and industry expertise.</p>
                     </div>
                     <!-- Grid column -->
                     <hr class="w-100 clearfix d-md-none" />
                     <!-- Grid column -->
-                    <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
-                        <h6 class="text-uppercase mb-4 font-weight-bold">Areas of interest</h6>
-                        <p v-for="a of areas">
-                            <NuxtLink :to="'/areas/'+a.id" class="footerLink">{{ a.name }}</NuxtLink>
-                        </p>
+                    <div class="col-md-4 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">
+                            <NuxtLink to="/areas" class="footerLink">Areas of interest</NuxtLink>
+                        </h6>
+                        <p v-for="a of areas">{{ a.name }}</p>
                     </div>
 
                     <!-- Grid column -->
                     <hr class="w-100 clearfix d-md-none" />
 
                     <!-- Grid column -->
-                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h6 class="text-uppercase mb-4 font-weight-bold">Contact us</h6>
+                    <div class="col-md-4 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">
+                            <NuxtLink to="/contact" class="footerLink">Contact us</NuxtLink>
+                        </h6>
                         <p><i class="fa-solid fa-phone fa-xs me-2"></i>+44 123 456 7890</p>
                         <p><i class="fa-solid fa-envelope fa-xs me-2"></i>info@bright-futures.com</p>
                         <p><i class="fa-solid fa-house fa-xs me-2"></i>London, 24 Oxford St, UK</p>

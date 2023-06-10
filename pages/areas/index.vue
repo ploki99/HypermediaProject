@@ -5,7 +5,7 @@
         <p class="mb-5">In a world studded with endless possibilities, our areas of interest are the paths 
             that guide you toward the realization of your <b>dreams</b> and <b>goals</b>.</p>
         <div class="row justify-content-center">
-            <Card v-for = "area of areas" :title="area.name" :subtitle="''" 
+            <Card v-for = "area of areas" :title="area.name"
                 :link="'/areas/' + area.id" :pic_name="area.picture" :width="'400px'" />
         </div>
     </main>

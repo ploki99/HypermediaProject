@@ -64,7 +64,7 @@
 
                 <!-- Success notification-->
                 <div class="alert alert-success alert-dismissible d-none" id="notify">
-                    <button type="button" class="btn-close" @click="closeNotify"></button>
+                    <button  class="btn-close" @click="closeNotify"></button>
                     <p class="mb-0">
                         <strong class="me-1"><span id="notifyType">Success</span>!</strong> 
                         <span id="notifyMsg">Message correctly send, we will reply as soon as possible.</span>

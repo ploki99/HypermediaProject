@@ -3,23 +3,26 @@
 -->
 
 <template>
-    <NuxtLink class="profile-card shadow m-3 d-flex" :to = "link" :style="cardWidth">
-        <img class="img img-fluid" :src="images[pic_name]" alt="">
-        <div class="card-content">
-            <div class="all-text">
-                <h4 class="profile-name fw-bold my-1">{{ title }}</h4>
-                <p class="profile-username">{{ subtitle }}</p>
-            </div>
-            <div class="profile-icon text-end pe-4 mt-2">
+    <div class="w-auto rounded-3 shadow m-3 p-0 overflow-hidden" style="max-width: 95%;">
+        <NuxtLink class="profile-card d-flex p-0 overflow-hidden mw-100" :to = "link" :style="cardWidth">
+            <img class="img img-fluid" :src="images[pic_name]" alt="">
+            <div class="card-content">
+                <div class="all-text">
+                    <h4 class="profile-name fw-bold my-1">{{ title }}</h4>
+                    <p class="profile-username">{{ subtitle }}</p>
+                </div>
+                <div class="profile-icon text-end pe-4 mt-2">
                     <i class="fa fa-arrow-right-long fa-xl"></i>
+                </div>
             </div>
-        </div>
-    </NuxtLink>
+        </NuxtLink>
+        <div v-if="description" class="px-2 pb-2 pt-1 mw-100" :style="cardWidth">{{ description }}</div>
+    </div>
 </template>
 
 <script setup>
     //define props
-    const props = defineProps(['pic_name', 'title', 'subtitle', 'link','width']);
+    const props = defineProps(['pic_name', 'title', 'subtitle', 'link', 'width', 'description']);
     //get all images
     const images = getAllImages();
     //define cardWidth
@@ -29,12 +32,8 @@
 <style>
     .profile-card {
         background-color: var(--text-icons);
-        max-width: 95%;
-        overflow: hidden;
         position: relative;
         cursor: pointer;
-        border-radius: 10px;
-        padding: 0;
     }
 
     .profile-name, .profile-username, .profile-icon{
