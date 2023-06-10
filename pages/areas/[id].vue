@@ -15,11 +15,11 @@
 
         <div class="row">
             <div class="col-md-7">
-                <h3 id="secondTitle">Why invest in {{ area.name.toLowerCase() }}?</h3>
+                <h3 class="mt-4 mb-3">Why invest in {{ area.name.toLowerCase() }}?</h3>
                 <p v-html="area.description"></p>
             </div>
             <div class="col-md-5 text-center">
-                <img id="secondImage" :src="images[area.picture2]" alt="" class="img-fluid rounded">
+                <img :src="images[area.picture2]" alt="" class="img-fluid rounded my-4">
             </div>
         </div>
 
@@ -29,18 +29,6 @@
 
     </main>
 </template>
-
-<style>
-    #secondTitle{
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
-    #secondImage{
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-
-</style>
 
 <script setup>
     //import pinia store

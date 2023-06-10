@@ -3,7 +3,7 @@
 -->
 
 <template>
-    <button type="button" class="btn btn-floating" id="btn-back-to-top">
+    <button type="button" class="btn btn-floating" id="btn-back-to-top" @click="backToTop">
         <i class="fas fa-arrow-up"></i>
     </button>
 </template>
@@ -25,38 +25,23 @@
     }
 </style>
 
-<script>
-    export default{
-        data() {
-            return{
-                topBotton: 0,
-                //after how many pixels display the button
-                displayPixels: 200
-            }
-        },
-        methods: {
-            backToTop() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            },
-            handleScroll(){
-                if (document.body.scrollTop > this.displayPixels 
-                    || document.documentElement.scrollTop > this.displayPixels) 
-                    this.topBotton.style.display = "block";
-                else
-                    this.topBotton.style.display = "none";
-            }
-        },
-        beforeMount () {
-            this.topBotton = document.getElementById("btn-back-to-top");
-            window.addEventListener('scroll', this.handleScroll);
-            this.topBotton.addEventListener('click', this.backToTop);
-        },
-        beforeDestroy () {
-            window.removeEventListener('scroll', this.handleScroll);
-            this.topBotton.removeEventListener('click', this.backToTop);
-        }
+<script setup>
+    //after how many pixels display the button
+    const displayPixels = 200;
+    //function to scroll to top the page
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
     }
-  
-
+    //function to check if we have to display the button
+    function handleScroll(){
+        if (document.body.scrollTop > displayPixels || document.documentElement.scrollTop > displayPixels) 
+            document.getElementById('btn-back-to-top').style.display = "block";
+        else
+            document.getElementById('btn-back-to-top').style.display = "none";
+    }
+    //wait the DOM to be created to add the event listener
+    onMounted(() => {
+        window.addEventListener('scroll', handleScroll);
+    });
 </script>

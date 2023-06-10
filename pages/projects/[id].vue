@@ -29,7 +29,7 @@
                                 <Card :pic_name="project.people.picture" :title="project.people.name" subtitle="Supervisor" 
                                     :link="'/team/' + project.people.id" width="170px"/>
                             </div>
-                            <div class="col-7 w-auto"> 
+                            <div class="col-7" id="relatedAreas"> 
                                 <h5 class="mt-3">Related areas</h5>
                                 <div class="list-group">
                                     <ListItem v-for="a of project.areas" :link="'/areas/' + a.id" :name="a.name" picture="" :small="true" alt="" />
@@ -71,6 +71,15 @@
     }
     #cardContainer{
         min-width: 170px;
+    }
+    /*improve responsiveness*/
+    @media screen and (max-width: 992px) {
+        #relatedAreas {
+            width: 100%;
+        }
+        #cardContainer {
+            width: auto;
+        }
     }
 </style>
 

@@ -3,7 +3,7 @@
 -->
 <template>
     <img class="introImage" :src="images[picture]" alt="">
-    <div class="introName">
+    <div class="introName py-2 mb-2">
         <div class="container">
             <Breadcrumb :pathNames="pathNames" :pathLinks="pathLinks" />
             <h2>{{ title }}</h2>
@@ -20,16 +20,13 @@
 
 <style>
     .introImage{
-        margin-top: -18px;
+        margin-top: -18px; 
         min-width: 100%;
         max-width: 100%;
     }
     .introName{
-        margin-bottom: 10px;
         background-color: var(--primary-text);
         opacity: 0.9;
-        padding-top: 10px;
-        padding-bottom: 10px;
     }
     .introName h2{
         color: var(--text-icons);

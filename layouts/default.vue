@@ -24,10 +24,3 @@
         padding-bottom: 50px;
     }
 </style>
-
-<script>
-    export default{
-        //always scroll to top of the page when the page changes
-        scrollToTop: true
-    }
-</script>

@@ -8,10 +8,10 @@
             <div class="col-md-7 ml-5">
                 <h4>{{ person.name }}</h4>
                 <div class="fw-bold" id="person_role">{{ person.role }}</div>
-                <div id="person_cv">{{ person.cv }}</div>
+                <div class="pt-2">{{ person.cv }}</div>
             </div>
         </div>
-        <div class="row" id="supervisedProjects">
+        <div class="row mt-4">
             <h3>Supervised projects</h3>
             <ListItem v-for="p of person.projects" :name="p.name" :link="'/projects/'+p.id" :picture="p.picture" :small="false" alt="project icon" />
         </div>
@@ -57,15 +57,6 @@
 <style>
     #img_div img{
         width: 300px;
-    }
-    #person_cv{
-        padding-top: 10px;
-    }
-    #supervisedProjects{
-        margin-top: 20px;
-    }
-    #supervisedProjects ul{
-        margin-top: 10px;
     }
     #person_role{
         color: var(--secondary-text);

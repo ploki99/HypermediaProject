@@ -7,9 +7,9 @@
     <NuxtLayout>
         <main>
             <div class="d-flex align-items-center justify-content-center">
-                <div class="text-center" id="errorMessage">
+                <div class="text-center mt-5">
                     <h1 class="display-1 fw-bold">{{ error.statusCode }}</h1>
-                    <p class="fs-3"> <span class="text-danger">Opps!</span> {{ errorType }}</p>
+                    <p class="fs-3"> <span class="text-danger">Oops!</span> {{ errorType }}</p>
                     <p class="lead">
                         {{ errorMessage }}
                     </p>
@@ -39,9 +39,3 @@
         description: "This is an error page, please return to the Home or use the menu to continue the navigation."
     });
 </script>
-
-<style>
-    #errorMessage{
-        margin-top: 40px;
-    }
-</style>

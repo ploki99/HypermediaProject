@@ -15,7 +15,7 @@
 h1,h2,h3,h4,h5,h6,h7,div,span,p{
     color: var(--primary-text);
 }
-/*override bootsrap button color*/
+/*override bootstrap color*/
 .btn-primary{
     background-color: var(--accent-color);
     border-color: var(--accent-color);
@@ -23,4 +23,8 @@ h1,h2,h3,h4,h5,h6,h7,div,span,p{
 .btn-primary:hover{
     background-color: var(--accent-color2);
     border-color: var(--accent-color2);
+}
+.form-check-input:checked {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
 }
