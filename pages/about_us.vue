@@ -6,10 +6,10 @@
     <main>
         <section class="mb-3">
             <div class="container">
-                <h2>Who are we?</h2>
-                <p class="lead">Welcome to Bright Futures!</p>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-lg-6">
+                        <h2>Who are we?</h2>
+                        <p class="lead">Welcome to Bright Futures!</p>
                         <div class="row">
                             <div class="col-sm-1 d-flex align-items-center justify-content-center mt-3 mb-3">
                                 <i class="fa-solid fa-people-group fa-2xl"></i>
@@ -54,7 +54,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-6 align-self-center mt-3">
                         <Chart :id="'aboutChart'" :dimension="'350px'" />
                     </div>
                 </div>
@@ -63,24 +63,24 @@
         
         <section id="quote" class="mt-5 mb-0 py-3">
             <div class="container">
-                <h4 class="text-light text-center fst-italic">Investing in the future of technology and sustainability is not just 
+                <p class="text-light text-center fst-italic fs-4">Investing in the future of technology and sustainability is not just 
                     a smart business decision, but a moral imperative in order to create a more sustainable and equitable world for 
                     future generations. 
-                </h4>
+                </p>
                 <div id="services"></div>
             </div>
         </section>
 
         <section class="bg-light py-5">
             <div class="container">
-                <h2 class="mb-4">Our services</h2>
+                <h3 class="mb-4">Our services</h3>
             </div>
             <VerticalPills :id="'servicesPills'" :titles="services.titles" :pics="services.pictures" :descriptions="services.descriptions"/>
         </section>
 
         <section class="py-5">
             <div class="container">
-                <h2 class="mb-4">Our story</h2>
+                <h3 class="mb-4">Our story</h3>
             </div>
             <Timeline :events="events" />
         </section>

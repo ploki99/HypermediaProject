@@ -6,7 +6,7 @@
                 <img :src="images[person.picture]" class="rounded img-fluid" :alt="person.name" > 
             </div>
             <div class="col-md-7 ml-5">
-                <h4>{{ person.name }}</h4>
+                <h2>{{ person.name }}</h2>
                 <div class="fw-bold" id="person_role">{{ person.role }}</div>
                 <div class="pt-2">{{ person.cv }}</div>
             </div>

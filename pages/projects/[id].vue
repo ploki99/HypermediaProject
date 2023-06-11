@@ -13,7 +13,7 @@
                             <img :src="images[project.picture]" id="projectIcon" alt="project icon">
                         </div>
                         <div class="col-md-10 d-flex align-items-center">
-                            <h5>Designed by {{ project.startup_name }}</h5>
+                            <h3>Designed by {{ project.startup_name }}</h3>
                         </div>
                     </div>
                     <div class="row mt-3">
@@ -23,14 +23,14 @@
 
                 <div class="col-md-6">
                     <div class="shadow p-3 rounded">
-                        <h4 class="text-center">At Bright Futures</h4>
+                        <h3 class="text-center">At Bright Futures</h3>
                         <div class="row justify-content-center">
                             <div class="col-5" id="cardContainer">
                                 <Card :pic_name="project.people.picture" :title="project.people.name" subtitle="Supervisor" 
                                     :link="'/team/' + project.people.id" width="170px"/>
                             </div>
                             <div class="col-7" id="relatedAreas"> 
-                                <h5 class="mt-3">Related areas</h5>
+                                <h4 class="mt-3">Related areas</h4>
                                 <div class="list-group">
                                     <ListItem v-for="a of project.areas" :link="'/areas/' + a.id" :name="a.name" :small="true" alt="" />
                                 </div>
@@ -70,7 +70,8 @@
         width: 50px;
     }
     #cardContainer{
-        min-width: 170px;
+        max-width: 200px;
+        padding: 0;
     }
     /*improve responsiveness*/
     @media screen and (max-width: 992px) {

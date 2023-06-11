@@ -6,7 +6,7 @@
 -->
 
 <template>
-    <h4 class="mb-3 text-center">Number of projects in each area</h4>
+    <p class="mb-3 text-center fs-5 fw-bold">Number of projects in each area</p>
     <div class="d-flex justify-content-center">
         <div :style="'width: ' + chartDim + '; height: ' + chartDim">
             <canvas :id="chartId"></canvas>

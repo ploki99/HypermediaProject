@@ -5,7 +5,7 @@
     <img class="introImage" :src="images[picture]" alt="">
     <div class="introName py-2 mb-2">
         <div class="container">
-            <Breadcrumb :pathNames="pathNames" :pathLinks="pathLinks" />
+            <Breadcrumb :pathNames="pathNames" :pathLinks="pathLinks" :light="true"/>
             <h2>{{ title }}</h2>
         </div>
     </div> 

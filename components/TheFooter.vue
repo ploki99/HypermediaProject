@@ -13,7 +13,7 @@
                 <div class="row">
                     <!-- Grid column -->
                     <div class="col-md-4 mx-auto mt-3">
-                        <h6 class="text-uppercase mb-4 font-weight-bold">
+                        <h6 class="text-uppercase mb-4">
                             <NuxtLink to="/about_us" class="footerLink">Bright Futures</NuxtLink>
                         </h6>
                         <p>We are experienced investors and entrepreneurs helping early stage startups succeed 
@@ -23,7 +23,7 @@
                     <hr class="w-100 clearfix d-md-none" />
                     <!-- Grid column -->
                     <div class="col-md-4 mx-auto mt-3">
-                        <h6 class="text-uppercase mb-4 font-weight-bold">
+                        <h6 class="text-uppercase mb-4">
                             <NuxtLink to="/areas" class="footerLink">Areas of interest</NuxtLink>
                         </h6>
                         <p v-for="a of areas">{{ a.name }}</p>
@@ -34,7 +34,7 @@
 
                     <!-- Grid column -->
                     <div class="col-md-4 mx-auto mt-3">
-                        <h6 class="text-uppercase mb-4 font-weight-bold">
+                        <h6 class="text-uppercase mb-4">
                             <NuxtLink to="/contact" class="footerLink">Contact us</NuxtLink>
                         </h6>
                         <p><i class="fa-solid fa-phone fa-xs me-2"></i>+44 123 456 7890</p>

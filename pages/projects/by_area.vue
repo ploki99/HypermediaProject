@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <h4 class="pt-4 pb-2">List of projects</h4>
+        <h3 class="pt-4 pb-2">List of projects</h3>
         <ListItem v-for="p of filteredProjects" :name="p.name" :link="'/projects/'+p.id" :picture="p.picture" :small="false" alt="project icon" />
     </main>
 

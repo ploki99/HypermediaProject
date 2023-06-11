@@ -8,7 +8,7 @@
             <NuxtLink :to="prevLink" id="prevLink">
                 <i class="fa-solid fa-angle-left fa-2xl"></i>
                 <i class="fa-solid fa-minus fa-xl" id="prevLine"></i>
-                <span>Prev</span>
+                Prev
             </NuxtLink>
             <span class="position-absolute pageIndicator" id="currPage">{{ currPage }}</span>
             <span class="position-absolute pageIndicator" id="divPage">/</span>
@@ -16,7 +16,7 @@
         <div class="col-6 position-relative">
             <span class="position-absolute pageIndicator" id="totPage">{{ totPages }}</span>
             <NuxtLink :to="nextLink" id="nextLink">
-                <span>Next</span>
+                Next
                 <i class="fa-solid fa-minus fa-xl" id="nextLine"></i>
                 <i class="fa-solid fa-angle-right fa-2xl"></i>
             </NuxtLink>
@@ -34,12 +34,12 @@
         margin-top: 70px;
         width: 100%;
     }
-    #navigationLinks a, #navigationLinks a span {
+    #navigationLinks a {
         text-decoration: none;
-        color: var(--primary-color);
-    }
-    #navigationLinks a:hover, #navigationLinks a span:hover {
         color: var(--dark-primary-color);
+    }
+    #navigationLinks a:hover {
+        color: var(--primary-color);
     }
     #prevLink{
         position: absolute;

@@ -7,7 +7,7 @@
         <ul class="breadcrumb">
             <!-- Clickable part of the breadcrumb -->
             <li v-for="i of indexes" class="breadcrumb-item">
-                <NuxtLink :to="pathLinks[i]" class="pageLink" >{{pathNames[i]}}</NuxtLink>
+                <NuxtLink :to="pathLinks[i]" :class="linkClass" >{{pathNames[i]}}</NuxtLink>
             </li>    
             <!-- Current page (not clickable) -->
             <li class="breadcrumb-item active">{{ pathNames[pathNames.length-1] }}</li>       
@@ -16,17 +16,24 @@
 </template>
 
 <script setup>
-    const props = defineProps(['pathNames','pathLinks']);
+    const props = defineProps(['pathNames','pathLinks','light']);
     //indexes of pathLinks array
     const indexes = Array.from(props.pathLinks.keys());
+    //set link css class
+    let linkClass = "pageLink";
+    if (props.light)
+        linkClass = "lightPageLink"
 </script>
 
 <style>
     .pageLink{
+        color: var(--dark-primary-color);
+    }
+    .pageLink:hover, .lightPageLink:hover{
         color: var(--primary-color);
     }
-    .pageLink:hover{
-        color: var(--dark-primary-color);
+    .lightPageLink{
+        color: var(--light-primary-color);
     }
     .breadcrumb-item.active{
         color: var(--secondary-text);

@@ -6,7 +6,7 @@
     <main>
 
         <section class="container">
-            <h1>Our contacts</h1>
+            <h2>Our contacts</h2>
             <p class="lead">Connect with us for a seamless experience and turn your requests into solutions.</p>
         </section>
 
@@ -15,17 +15,17 @@
                 <div class="row">
                     <div class="col center-block text-center">
                         <i class="fa-solid fa-phone mb-4 contact_img"></i>
-                        <h5>Telephone</h5>
+                        <p class="fw-bold fs-6">Telephone</p>
                         <div>+44 123 456 7890</div>
                     </div>
                     <div class="col center-block text-center">
                         <i class="fa-solid fa-envelope mb-4 contact_img"></i>
-                        <h5>E-mail</h5>
+                        <p class="fw-bold fs-6">E-mail</p>
                         <div>info@bright-futures.com</div>
                     </div>
                     <div class="col center-block text-center">
                         <i class="fa-solid fa-house mb-4 contact_img"></i>
-                        <h5>Address</h5>
+                        <p class="fw-bold fs-6">Address</p>
                         <div>London, 24 Oxford St, UK</div>
                     </div>
                 </div>
