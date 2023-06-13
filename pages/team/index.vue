@@ -3,7 +3,7 @@
     <main>
         <div class="container">
             <h2>Our team</h2>
-            <p class="mb-5">We are ready to discover and invest in the most innovative and 
+            <p class="mb-4">We are ready to discover and invest in the most innovative and 
                 promising start-ups in the market, driving <b>innovation</b> and 
                 <b>change</b> in society.
             </p>

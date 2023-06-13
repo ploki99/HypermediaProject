@@ -8,14 +8,18 @@
         <section class="container">
             <div class="row">
                 <div class="col-md-6 pe-4">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <img :src="images[project.picture]" id="projectIcon" alt="project icon">
-                        </div>
-                        <div class="col-md-10 d-flex align-items-center">
-                            <h3>Designed by {{ project.startup_name }}</h3>
-                        </div>
-                    </div>
+                    <table class="w-100">
+                        <tbody>
+                            <tr>
+                                <td class="text-center">
+                                    <img :src="images[project.picture]" id="projectIcon" alt="project icon">
+                                </td>
+                                <td class="align-middle">
+                                    <h3 class="mb-0 ms-3">Designed by {{ project.startup_name }}</h3>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <div class="row mt-3">
                         <p v-html="project.overview"></p>
                     </div>
@@ -51,11 +55,14 @@
         <section class="container">
             <h3 class="mt-4 mb-3">{{ project.startup_name }}</h3>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 mb-3">
                     <img :src="images[project.startup_picture]" class="rounded img-fluid" :alt="project.startup_name + ' team'" >
                 </div>
                 <div class="col-md-8">
                     <p v-html="project.startup_description"></p>
+                    <div v-if="project.startup_link && project.startup_link!=''" class="text-center">
+                        <NuxtLink class="btn btn-primary" target="blank" :to="project.startup_link">Visit website</NuxtLink>
+                    </div>
                 </div>
             </div>
         </section>

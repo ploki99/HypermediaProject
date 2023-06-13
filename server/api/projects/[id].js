@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
 
     const { data, error }= await client.from('projects')
                         .select("id, name, picture, overview, large_picture, \
-                         startup_name, startup_description, startup_picture, description,  \
+                         startup_name, startup_description, startup_picture, startup_link, description,  \
                          people(id , name, picture), areas(id, name) ")
                         .eq('id', id).limit(1).single();
     

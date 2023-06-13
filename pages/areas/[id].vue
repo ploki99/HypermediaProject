@@ -10,7 +10,7 @@
 
         <div class="row">
             <div class="col-md-7">
-                <h3 class="mt-4 mb-3">Why invest in {{ area.name.toLowerCase() }}?</h3>
+                <h3 class="mt-4 mb-3">Why choose us as your investor?</h3>
                 <p v-html="area.description"></p>
             </div>
             <div class="col-md-5 text-center">

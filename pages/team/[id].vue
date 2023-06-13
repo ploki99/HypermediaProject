@@ -2,7 +2,7 @@
     <Breadcrumb :pathNames="pathNames" :pathLinks="pathLinks" />
     <main class="container">
         <div class="row">
-            <div class="col-md-5" id="img_div">
+            <div class="col-md-5 mb-3 text-center" id="img_div">
                 <img :src="images[person.picture]" class="rounded img-fluid" :alt="person.name" > 
             </div>
             <div class="col-md-7 ml-5">
