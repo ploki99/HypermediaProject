@@ -3,12 +3,12 @@
 -->
 
 <template>
-    <div class="w-auto rounded-3 shadow m-3 p-0 overflow-hidden" style="max-width: 95%;">
-        <NuxtLink class="profile-card d-flex p-0 overflow-hidden mw-100" :to = "link" :style="cardWidth">
-            <img class="img img-fluid" :src="images[pic_name]" alt="">
-            <div class="card-content">
+    <div class="w-auto shadow m-3 p-0 rounded-3 card" style="max-width: 95%;">
+        <NuxtLink class="profile-card d-flex p-0 mw-100 rounded-3" :to = "link" :style="cardWidth">
+            <img :class="'img img-fluid ' + roundedClass" :src="images[pic_name]" alt="">
+            <div :class="'card-content ' + roundedClass">
                 <div class="all-text">
-                    <h4 class="profile-name fw-bold my-1">{{ title }}</h4>
+                    <p class="profile-name fs-4 fw-bold my-1">{{ title }}</p>
                     <p class="profile-username">{{ subtitle }}</p>
                 </div>
                 <div class="profile-icon text-end pe-4 mt-2">
@@ -16,7 +16,11 @@
                 </div>
             </div>
         </NuxtLink>
-        <div v-if="description" class="px-2 pb-2 pt-1 mw-100" :style="cardWidth">{{ description }}</div>
+        <div v-if="description" class="mw-100" :style="cardWidth">
+            <NuxtLink :to = "link" class="text-decoration-none">
+                <div class="px-2 pb-2 pt-1">{{ description }}</div>
+            </NuxtLink>
+        </div>
     </div>
 </template>
 
@@ -27,6 +31,9 @@
     const images = getAllImages();
     //define cardWidth
     const cardWidth = "width: " + props.width;
+    let roundedClass = "rounded-3";
+    if (props.description)
+        roundedClass = "rounded-top";
 </script>
 
 <style>
@@ -44,32 +51,33 @@
         transition: all linear 0.25s;
     }
 
-    .profile-card:hover img {
+    .card:hover img {
         filter: grayscale(70%);
     }
 
     .all-text{
         position: inherit;
-        top: 20px;
+        top: 5%;
         width: 100%;
         padding: 0px 10px 10px 20px;
         transition: all linear 0.25s;
     }
 
-    .profile-card:hover .all-text {
-        top: 35px;
+    .card:hover .all-text {
+        top: 10%;
     }
 
     .profile-icon{
         position: inherit;
         bottom: 10px;
+        right: 5%;
         width: 100%;
         padding: 0px 10px 10px 10px;
         transition: all linear 0.25s;
     }
 
-    .profile-card:hover .profile-icon {
-        bottom: 25px;
+    .card:hover .profile-icon {
+        right: 0%;
     }
 
     .card-content{

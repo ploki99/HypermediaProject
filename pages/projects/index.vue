@@ -12,9 +12,9 @@
         <div class="my-4">
             <div class="input-group rounded">
                 <button class="btn btn-primary dropdown-toggle input" data-bs-toggle="collapse" data-bs-target="#filterOptions">Options</button>
-                <input type="search" class="form-control rounded-end" v-model="insertedName"
+                <input type="search" class="form-control border-end-0" v-model="insertedName"
                         placeholder="Search project by name" aria-label="Search" aria-describedby="search-addon" />
-                <span class="input-group-text border-0" id="search-addon">
+                <span class="input-group-text border" id="search-addon">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </span>              
             </div>  

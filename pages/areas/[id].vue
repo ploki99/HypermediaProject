@@ -23,7 +23,7 @@
         <h3 class="pt-4">Take a look at our supervised projects</h3>
         <p>
             Explore our portfolio of {{ area.name.toLowerCase() }} projects and discover the innovative solutions we're investing in.
-            <NuxtLink to="/projects/by_area">Click here</NuxtLink> to view the full list and dive into the details!
+            <NuxtLink to="/projects/by_area">View the full list</NuxtLink> and dive into the details!
         </p>
    
         <NavigationLinks :prevLink="'/areas/'+prevId" :nextLink="'/areas/'+nextId" :currPage="currPage" :totPages="totPages"/>

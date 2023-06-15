@@ -99,7 +99,7 @@
     .main-timeline .timeline:nth-child(even) .timeline-content:before{ background-color: var(--primary-color); }
     .main-timeline .timeline:nth-child(even) .title{ color: var(--primary-color); }
 
-    @media screen and (max-width:767px){
+    @media screen and (max-width:768px){
         .main-timeline .timeline,
         .main-timeline .timeline:nth-child(even){
             width: 100%;

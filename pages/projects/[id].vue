@@ -26,15 +26,18 @@
                 </div>
 
                 <div class="col-md-6">
-                    <div class="shadow p-3 rounded">
-                        <h3 class="text-center">At Bright Futures</h3>
+                    <div id="ourCompany">
+                        <h3>In our company</h3>
+                        <p class="mb-1">
+                            Take a look at our team member overseeing this project and the areas to which this project belongs.
+                        </p>
                         <div class="row justify-content-center">
                             <div class="col-5" id="cardContainer">
                                 <Card :pic_name="project.people.picture" :title="project.people.name" subtitle="Supervisor" 
                                     :link="'/team/' + project.people.id" width="170px"/>
                             </div>
                             <div class="col-7" id="relatedAreas"> 
-                                <h4 class="mt-3">Related areas</h4>
+                                <h4 class="mt-3">Areas of interest</h4>
                                 <div class="list-group">
                                     <ListItem v-for="a of project.areas" :link="'/areas/' + a.id" :name="a.name" :small="true" alt="" />
                                 </div>
@@ -80,7 +83,19 @@
         max-width: 200px;
         padding: 0;
     }
+    #ourCompany{
+        border-left: 1px solid var(--divider-color);
+        padding-left: 1.5rem;
+    }
     /*improve responsiveness*/
+    @media screen and (max-width: 768px) {
+        #ourCompany{
+            padding-top: 1rem;
+            padding-left: 0;
+            border-left: none;
+            border-top: 1px solid var(--divider-color);
+        }
+    }
     @media screen and (max-width: 992px) {
         #relatedAreas {
             width: 100%;

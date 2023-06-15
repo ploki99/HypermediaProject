@@ -4,8 +4,8 @@
     --light-primary-color:#B2DFDB;
     --primary-color:#009688;
     --text-icons:#FFFFFF;
-    --accent-color: #536DFE;
-    --accent-color2:#687ffe; /* slightly different for doing hover effect */
+    --accent-color: #4863FE;
+    --accent-color2:#667bf5; /* slightly different for doing hover effect (old:687ffe)*/
     --primary-text:#212121;
     --secondary-text:#757575;
     --divider-color:#BDBDBD;
@@ -33,4 +33,9 @@ p a{
 }
 p a:hover{
     color: var(--accent-color2)
+}
+/*insert our color for focus*/
+.form-control:focus, .form-check-input:focus{
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(72, 99, 254, 0.25);
 }

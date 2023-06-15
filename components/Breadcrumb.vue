@@ -3,7 +3,7 @@
 -->
 
 <template>
-    <div class="container">
+    <div :class="'container' + noMargin">
         <ul class="breadcrumb">
             <!-- Clickable part of the breadcrumb -->
             <li v-for="i of indexes" class="breadcrumb-item">
@@ -21,8 +21,11 @@
     const indexes = Array.from(props.pathLinks.keys());
     //set link css class
     let linkClass = "pageLink";
-    if (props.light)
-        linkClass = "lightPageLink"
+    let noMargin = ""
+    if (props.light){
+        linkClass = "lightPageLink";
+        noMargin = "ms-0";
+    }
 </script>
 
 <style>

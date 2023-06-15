@@ -45,6 +45,18 @@
         color: var(--text-icons);
     }
     
+    .nav-pills-custom .nav-link:hover {
+        background: var(--accent-color);
+    }
+
+    .nav-pills-custom .nav-link:hover span {
+        color: var(--text-icons);
+    }
+
+    .nav-pills-custom .nav-link{
+        transition: none;
+    }
+
     .text-description{
         color: var(--secondary-text)
     }

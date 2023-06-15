@@ -3,7 +3,7 @@
 -->
 <template>
     <!-- loading bar -->
-    <NuxtLoadingIndicator />
+    <NuxtLoadingIndicator :height="5" />
     <div class = 'page'>
         <div class = 'content'>
             <TheHeader /> 

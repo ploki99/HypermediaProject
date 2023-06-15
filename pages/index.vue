@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <h2 class="mb-4">About Us</h2>
+                    <h2 class="mb-4">Our company</h2>
                     <p>We are Bright Futures, an experienced team of investors with expertise in technology, finance and operations. 
                         We invest in innovative startups and provide support to guide them to success. Our company specializes in  
                         <span v-for="idx of areas.length">
@@ -32,8 +32,13 @@
                         established partnerships with universities and raised new funds in 2018. Today, we are a leader in early 
                         stage investing, committed to innovation, sustainability, and social impact.
                     </p>
-                    <div class="text-center mt-4">
-                        <NuxtLink class="btn btn-primary btn-lg" to="/about_us">Discover more</NuxtLink>
+                    <div class="row mt-4">
+                        <div class="col-6 text-end">
+                            <NuxtLink class="btn btn-primary btn-lg w-75 colBtn" to="/team">Our team</NuxtLink>
+                        </div>
+                        <div class="col-6 text-start">
+                            <NuxtLink class="btn btn-primary btn-lg w-75 colBtn" to="/about_us">About us</NuxtLink>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6 mt-4">
@@ -45,7 +50,7 @@
     
     <section id="portfolio" class="bg-light py-5">
         <div class="container">
-            <h2>Our Portfolio</h2>
+            <h2>Our Top Projects</h2>
             <p class="lead">We successfully supervise several projects, here is a selection of the most relevant ones.</p>
             <Carousel :id="'homeCarousel'" :names="names" :pictures="pictures" :links="links"/>
         </div>
@@ -67,7 +72,7 @@
             <h2>Let's create something extraordinary together</h2>
             <p class="lead">We are always looking for new partners who share our vision for a better future. Join us on our journey!</p>
             <div class="text-center">
-                <NuxtLink class="btn btn-primary btn-lg" to="/contact">Contact Us</NuxtLink>
+                <NuxtLink class="btn btn-primary btn-lg px-5" to="/contact">Contact Us</NuxtLink>
             </div>
         </div>
     </section>
@@ -90,12 +95,16 @@
         top: -200px;
         margin-bottom: -200px;
     }
-    @media screen and (max-width: 770px) {
+    @media screen and (max-width: 768px) {
         #hero {
             top: 0px;
             margin-bottom: 0px;
             height: 250px;
         }
+    }
+
+    .colBtn{
+        max-width: 200px;
     }
 
 </style>

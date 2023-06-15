@@ -39,7 +39,7 @@
             values.push(graphData[a]);
         }
         //set a generic list of colors (palette based on --accent-color)
-        const colorsPalette = ["#536dfe","#ff8f72","#ffc659","#e459da","#f9f871","#ff60a4"];
+        const colorsPalette = ["#4863FE","#ff8f72","#ffc659","#e459da","#f9f871","#ff60a4"];
         //set colors for areas
         let colors = [];
         for (let i = 0 ; i < labels.length ; i++)

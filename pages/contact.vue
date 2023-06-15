@@ -13,21 +13,21 @@
         <section class="bg-light py-5">
             <div class="container">
                 <div class="row">
-                    <div class="col center-block text-center">
+                    <NuxtLink to="tel:+44 123 456 7890" class="col center-block text-center contactLink">
                         <i class="fa-solid fa-phone mb-4 contact_img"></i>
                         <p class="fw-bold fs-6">Telephone</p>
                         <div>+44 123 456 7890</div>
-                    </div>
-                    <div class="col center-block text-center">
+                    </NuxtLink>
+                    <NuxtLink to="mailto:info@bright-futures.com" class="col center-block text-center contactLink">
                         <i class="fa-solid fa-envelope mb-4 contact_img"></i>
                         <p class="fw-bold fs-6">E-mail</p>
                         <div>info@bright-futures.com</div>
-                    </div>
-                    <div class="col center-block text-center">
+                    </NuxtLink>
+                    <NuxtLink to="https://maps.google.com/?q=London, 24 Oxford St, UK" target="_blank" class="col center-block text-center contactLink">
                         <i class="fa-solid fa-house mb-4 contact_img"></i>
                         <p class="fw-bold fs-6">Address</p>
                         <div>London, 24 Oxford St, UK</div>
-                    </div>
+                    </NuxtLink>
                 </div>
             </div>
         </section>
@@ -101,6 +101,19 @@
         border-radius: 6px;
     }
     
+    .contactLink{
+        text-decoration: none;
+    }
+
+    .contactLink:hover i{
+        color:var(--accent-color2);
+        border-color: var(--accent-color2);
+    }
+
+    .contactLink:hover div, .contactLink:hover p {
+        color: var(--accent-color2);
+    }
+
 </style>
 
 <script setup>
