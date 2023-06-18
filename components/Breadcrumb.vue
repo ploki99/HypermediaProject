@@ -25,6 +25,7 @@
     if (props.light){
         linkClass = "lightPageLink";
         noMargin = "ms-0";
+        props.pathNames[props.pathNames.length-1] = "";
     }
 </script>
 
